@@ -1,0 +1,66 @@
+﻿<Page
+    x:Class="Runkeeper.HistoryRoutePage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Runkeeper"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:i="using:Microsoft.Xaml.Interactivity" 
+    xmlns:ic="using:Microsoft.Xaml.Interactions.Core"
+    xmlns:controls="using:WinRTXamlToolkit.Controls"
+    mc:Ignorable="d">
+
+    <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled">
+        <Grid Background="Black">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+                    <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="4">
+                <ListView Margin="10" Name="data" ItemsSource="{Binding walkedRoutes, Mode=TwoWay}" IsMultiSelectCheckBoxEnabled="True">
+                    <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <controls:WrapPanel>
+                                    <TextBlock Text="Afstand :  " />
+                                    <TextBlock Name="afstand"  Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" />
+                                    <TextBlock Text=" Meter  |" />
+                                    <TextBlock Text=" Datum : " />
+                                    <TextBlock Text="{Binding date, Mode=TwoWay}" FontWeight="Bold" />
+                                </controls:WrapPanel>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+               
+                    <Button Name="SortDistance" Content="Distance" Click="SortDistance_OnClick"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <Button Name="SortDate" Content="Datum" Click="SortDate_OnClick"/>
+            </StackPanel>
+
+            <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="Sorteren: "/>
+            </StackPanel>
+  
+        </Grid>
+
+        
+    </ScrollViewer>
+</Page>
