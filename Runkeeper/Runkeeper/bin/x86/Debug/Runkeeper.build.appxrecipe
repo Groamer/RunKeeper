@@ -357,14 +357,8 @@
     <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\currentLocation.png">
       <PackagePath>Assets\currentLocation.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\hulp.png">
-      <PackagePath>Assets\hulp.png</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\MapIcon.png">
       <PackagePath>Assets\MapIcon.png</PackagePath>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\MapIconHelp.png">
-      <PackagePath>Assets\MapIconHelp.png</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
