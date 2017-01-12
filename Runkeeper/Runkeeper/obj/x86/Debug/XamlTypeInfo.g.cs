@@ -156,113 +156,111 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[52];
-            _typeNameTable[0] = "Runkeeper.CreateRoute";
-            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Page";
-            _typeNameTable[2] = "Windows.UI.Xaml.Controls.UserControl";
-            _typeNameTable[3] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart";
-            _typeNameTable[4] = "Windows.UI.Xaml.Controls.Control";
-            _typeNameTable[5] = "System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>";
-            _typeNameTable[6] = "Object";
-            _typeNameTable[7] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries";
-            _typeNameTable[8] = "System.Collections.ObjectModel.ObservableCollection`1<Object>";
-            _typeNameTable[9] = "System.Collections.ObjectModel.Collection`1<Object>";
-            _typeNameTable[10] = "System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>";
-            _typeNameTable[11] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis";
-            _typeNameTable[12] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation";
-            _typeNameTable[13] = "System.Enum";
-            _typeNameTable[14] = "System.ValueType";
-            _typeNameTable[15] = "System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>";
-            _typeNameTable[16] = "System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>";
-            _typeNameTable[17] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener";
-            _typeNameTable[18] = "System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>";
-            _typeNameTable[19] = "System.Collections.ObjectModel.ReadOnlyCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>";
-            _typeNameTable[20] = "Windows.UI.Xaml.Style";
-            _typeNameTable[21] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.ResourceDictionary>";
-            _typeNameTable[22] = "Windows.UI.Xaml.ResourceDictionary";
-            _typeNameTable[23] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries";
-            _typeNameTable[24] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>";
-            _typeNameTable[25] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes";
-            _typeNameTable[26] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes";
-            _typeNameTable[27] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries";
-            _typeNameTable[28] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.Series";
-            _typeNameTable[29] = "String";
-            _typeNameTable[30] = "Boolean";
-            _typeNameTable[31] = "Windows.UI.Xaml.Media.PointCollection";
-            _typeNameTable[32] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis";
-            _typeNameTable[33] = "System.Nullable`1<Int32>";
-            _typeNameTable[34] = "Windows.UI.Xaml.Data.Binding";
-            _typeNameTable[35] = "System.Collections.IEnumerable";
-            _typeNameTable[36] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence";
-            _typeNameTable[37] = "Windows.UI.Xaml.Media.Animation.EasingFunctionBase";
-            _typeNameTable[38] = "TimeSpan";
-            _typeNameTable[39] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost";
-            _typeNameTable[40] = "Runkeeper.DataPage";
-            _typeNameTable[41] = "Runkeeper.FromRoutePage";
-            _typeNameTable[42] = "Runkeeper.HelpPage";
-            _typeNameTable[43] = "WinRTXamlToolkit.Controls.WrapPanel";
-            _typeNameTable[44] = "Windows.UI.Xaml.Controls.Panel";
-            _typeNameTable[45] = "Double";
-            _typeNameTable[46] = "Windows.UI.Xaml.Controls.Orientation";
-            _typeNameTable[47] = "Runkeeper.HistoryRoutePage";
-            _typeNameTable[48] = "Runkeeper.MainPage";
-            _typeNameTable[49] = "Runkeeper.MapPage";
-            _typeNameTable[50] = "Runkeeper.RunningPage";
-            _typeNameTable[51] = "Runkeeper.SettingsPage";
+            _typeNameTable = new string[51];
+            _typeNameTable[0] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart";
+            _typeNameTable[1] = "Windows.UI.Xaml.Controls.Control";
+            _typeNameTable[2] = "System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>";
+            _typeNameTable[3] = "Object";
+            _typeNameTable[4] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries";
+            _typeNameTable[5] = "System.Collections.ObjectModel.ObservableCollection`1<Object>";
+            _typeNameTable[6] = "System.Collections.ObjectModel.Collection`1<Object>";
+            _typeNameTable[7] = "System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>";
+            _typeNameTable[8] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis";
+            _typeNameTable[9] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation";
+            _typeNameTable[10] = "System.Enum";
+            _typeNameTable[11] = "System.ValueType";
+            _typeNameTable[12] = "System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>";
+            _typeNameTable[13] = "System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>";
+            _typeNameTable[14] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener";
+            _typeNameTable[15] = "System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>";
+            _typeNameTable[16] = "System.Collections.ObjectModel.ReadOnlyCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>";
+            _typeNameTable[17] = "Windows.UI.Xaml.Style";
+            _typeNameTable[18] = "System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.ResourceDictionary>";
+            _typeNameTable[19] = "Windows.UI.Xaml.ResourceDictionary";
+            _typeNameTable[20] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries";
+            _typeNameTable[21] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>";
+            _typeNameTable[22] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes";
+            _typeNameTable[23] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes";
+            _typeNameTable[24] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries";
+            _typeNameTable[25] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.Series";
+            _typeNameTable[26] = "String";
+            _typeNameTable[27] = "Boolean";
+            _typeNameTable[28] = "Windows.UI.Xaml.Media.PointCollection";
+            _typeNameTable[29] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis";
+            _typeNameTable[30] = "System.Nullable`1<Int32>";
+            _typeNameTable[31] = "Windows.UI.Xaml.Data.Binding";
+            _typeNameTable[32] = "System.Collections.IEnumerable";
+            _typeNameTable[33] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence";
+            _typeNameTable[34] = "Windows.UI.Xaml.Media.Animation.EasingFunctionBase";
+            _typeNameTable[35] = "TimeSpan";
+            _typeNameTable[36] = "WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost";
+            _typeNameTable[37] = "Runkeeper.DataPage";
+            _typeNameTable[38] = "Windows.UI.Xaml.Controls.Page";
+            _typeNameTable[39] = "Windows.UI.Xaml.Controls.UserControl";
+            _typeNameTable[40] = "Runkeeper.FromRoutePage";
+            _typeNameTable[41] = "Runkeeper.HelpPage";
+            _typeNameTable[42] = "WinRTXamlToolkit.Controls.WrapPanel";
+            _typeNameTable[43] = "Windows.UI.Xaml.Controls.Panel";
+            _typeNameTable[44] = "Double";
+            _typeNameTable[45] = "Windows.UI.Xaml.Controls.Orientation";
+            _typeNameTable[46] = "Runkeeper.HistoryRoutePage";
+            _typeNameTable[47] = "Runkeeper.MainPage";
+            _typeNameTable[48] = "Runkeeper.MapPage";
+            _typeNameTable[49] = "Runkeeper.RunningPage";
+            _typeNameTable[50] = "Runkeeper.SettingsPage";
 
-            _typeTable = new global::System.Type[52];
-            _typeTable[0] = typeof(global::Runkeeper.CreateRoute);
-            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Page);
-            _typeTable[2] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
-            _typeTable[3] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart);
-            _typeTable[4] = typeof(global::Windows.UI.Xaml.Controls.Control);
-            _typeTable[5] = typeof(global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>);
-            _typeTable[6] = typeof(global::System.Object);
-            _typeTable[7] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries);
-            _typeTable[8] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::System.Object>);
-            _typeTable[9] = typeof(global::System.Collections.ObjectModel.Collection<global::System.Object>);
-            _typeTable[10] = typeof(global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>);
-            _typeTable[11] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis);
-            _typeTable[12] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation);
-            _typeTable[13] = typeof(global::System.Enum);
-            _typeTable[14] = typeof(global::System.ValueType);
-            _typeTable[15] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>);
-            _typeTable[16] = typeof(global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>);
-            _typeTable[17] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener);
-            _typeTable[18] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>);
-            _typeTable[19] = typeof(global::System.Collections.ObjectModel.ReadOnlyCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>);
-            _typeTable[20] = typeof(global::Windows.UI.Xaml.Style);
-            _typeTable[21] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.ResourceDictionary>);
-            _typeTable[22] = typeof(global::Windows.UI.Xaml.ResourceDictionary);
-            _typeTable[23] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries);
-            _typeTable[24] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>);
-            _typeTable[25] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes);
-            _typeTable[26] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes);
-            _typeTable[27] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries);
-            _typeTable[28] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Series);
-            _typeTable[29] = typeof(global::System.String);
-            _typeTable[30] = typeof(global::System.Boolean);
-            _typeTable[31] = typeof(global::Windows.UI.Xaml.Media.PointCollection);
-            _typeTable[32] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis);
-            _typeTable[33] = typeof(global::System.Nullable<global::System.Int32>);
-            _typeTable[34] = typeof(global::Windows.UI.Xaml.Data.Binding);
-            _typeTable[35] = typeof(global::System.Collections.IEnumerable);
-            _typeTable[36] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence);
-            _typeTable[37] = typeof(global::Windows.UI.Xaml.Media.Animation.EasingFunctionBase);
-            _typeTable[38] = typeof(global::System.TimeSpan);
-            _typeTable[39] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost);
-            _typeTable[40] = typeof(global::Runkeeper.DataPage);
-            _typeTable[41] = typeof(global::Runkeeper.FromRoutePage);
-            _typeTable[42] = typeof(global::Runkeeper.HelpPage);
-            _typeTable[43] = typeof(global::WinRTXamlToolkit.Controls.WrapPanel);
-            _typeTable[44] = typeof(global::Windows.UI.Xaml.Controls.Panel);
-            _typeTable[45] = typeof(global::System.Double);
-            _typeTable[46] = typeof(global::Windows.UI.Xaml.Controls.Orientation);
-            _typeTable[47] = typeof(global::Runkeeper.HistoryRoutePage);
-            _typeTable[48] = typeof(global::Runkeeper.MainPage);
-            _typeTable[49] = typeof(global::Runkeeper.MapPage);
-            _typeTable[50] = typeof(global::Runkeeper.RunningPage);
-            _typeTable[51] = typeof(global::Runkeeper.SettingsPage);
+            _typeTable = new global::System.Type[51];
+            _typeTable[0] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart);
+            _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Control);
+            _typeTable[2] = typeof(global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>);
+            _typeTable[3] = typeof(global::System.Object);
+            _typeTable[4] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries);
+            _typeTable[5] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::System.Object>);
+            _typeTable[6] = typeof(global::System.Collections.ObjectModel.Collection<global::System.Object>);
+            _typeTable[7] = typeof(global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>);
+            _typeTable[8] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis);
+            _typeTable[9] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation);
+            _typeTable[10] = typeof(global::System.Enum);
+            _typeTable[11] = typeof(global::System.ValueType);
+            _typeTable[12] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>);
+            _typeTable[13] = typeof(global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>);
+            _typeTable[14] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener);
+            _typeTable[15] = typeof(global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>);
+            _typeTable[16] = typeof(global::System.Collections.ObjectModel.ReadOnlyCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>);
+            _typeTable[17] = typeof(global::Windows.UI.Xaml.Style);
+            _typeTable[18] = typeof(global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.ResourceDictionary>);
+            _typeTable[19] = typeof(global::Windows.UI.Xaml.ResourceDictionary);
+            _typeTable[20] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries);
+            _typeTable[21] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>);
+            _typeTable[22] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes);
+            _typeTable[23] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes);
+            _typeTable[24] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries);
+            _typeTable[25] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Series);
+            _typeTable[26] = typeof(global::System.String);
+            _typeTable[27] = typeof(global::System.Boolean);
+            _typeTable[28] = typeof(global::Windows.UI.Xaml.Media.PointCollection);
+            _typeTable[29] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis);
+            _typeTable[30] = typeof(global::System.Nullable<global::System.Int32>);
+            _typeTable[31] = typeof(global::Windows.UI.Xaml.Data.Binding);
+            _typeTable[32] = typeof(global::System.Collections.IEnumerable);
+            _typeTable[33] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence);
+            _typeTable[34] = typeof(global::Windows.UI.Xaml.Media.Animation.EasingFunctionBase);
+            _typeTable[35] = typeof(global::System.TimeSpan);
+            _typeTable[36] = typeof(global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost);
+            _typeTable[37] = typeof(global::Runkeeper.DataPage);
+            _typeTable[38] = typeof(global::Windows.UI.Xaml.Controls.Page);
+            _typeTable[39] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
+            _typeTable[40] = typeof(global::Runkeeper.FromRoutePage);
+            _typeTable[41] = typeof(global::Runkeeper.HelpPage);
+            _typeTable[42] = typeof(global::WinRTXamlToolkit.Controls.WrapPanel);
+            _typeTable[43] = typeof(global::Windows.UI.Xaml.Controls.Panel);
+            _typeTable[44] = typeof(global::System.Double);
+            _typeTable[45] = typeof(global::Windows.UI.Xaml.Controls.Orientation);
+            _typeTable[46] = typeof(global::Runkeeper.HistoryRoutePage);
+            _typeTable[47] = typeof(global::Runkeeper.MainPage);
+            _typeTable[48] = typeof(global::Runkeeper.MapPage);
+            _typeTable[49] = typeof(global::Runkeeper.RunningPage);
+            _typeTable[50] = typeof(global::Runkeeper.SettingsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -297,75 +295,74 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
             return -1;
         }
 
-        private object Activate_0_CreateRoute() { return new global::Runkeeper.CreateRoute(); }
-        private object Activate_3_Chart() { return new global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart(); }
-        private object Activate_5_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>(); }
-        private object Activate_8_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.Object>(); }
-        private object Activate_9_Collection() { return new global::System.Collections.ObjectModel.Collection<global::System.Object>(); }
-        private object Activate_10_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>(); }
-        private object Activate_15_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>(); }
-        private object Activate_16_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>(); }
-        private object Activate_18_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>(); }
-        private object Activate_21_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.ResourceDictionary>(); }
-        private object Activate_23_LineSeries() { return new global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries(); }
-        private object Activate_40_DataPage() { return new global::Runkeeper.DataPage(); }
-        private object Activate_41_FromRoutePage() { return new global::Runkeeper.FromRoutePage(); }
-        private object Activate_42_HelpPage() { return new global::Runkeeper.HelpPage(); }
-        private object Activate_43_WrapPanel() { return new global::WinRTXamlToolkit.Controls.WrapPanel(); }
-        private object Activate_47_HistoryRoutePage() { return new global::Runkeeper.HistoryRoutePage(); }
-        private object Activate_48_MainPage() { return new global::Runkeeper.MainPage(); }
-        private object Activate_49_MapPage() { return new global::Runkeeper.MapPage(); }
-        private object Activate_50_RunningPage() { return new global::Runkeeper.RunningPage(); }
-        private object Activate_51_SettingsPage() { return new global::Runkeeper.SettingsPage(); }
-        private void VectorAdd_5_Collection(object instance, object item)
+        private object Activate_0_Chart() { return new global::WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart(); }
+        private object Activate_2_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>(); }
+        private object Activate_5_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::System.Object>(); }
+        private object Activate_6_Collection() { return new global::System.Collections.ObjectModel.Collection<global::System.Object>(); }
+        private object Activate_7_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>(); }
+        private object Activate_12_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>(); }
+        private object Activate_13_Collection() { return new global::System.Collections.ObjectModel.Collection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>(); }
+        private object Activate_15_ObservableCollection() { return new global::System.Collections.ObjectModel.ObservableCollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>(); }
+        private object Activate_18_Collection() { return new global::System.Collections.ObjectModel.Collection<global::Windows.UI.Xaml.ResourceDictionary>(); }
+        private object Activate_20_LineSeries() { return new global::WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries(); }
+        private object Activate_37_DataPage() { return new global::Runkeeper.DataPage(); }
+        private object Activate_40_FromRoutePage() { return new global::Runkeeper.FromRoutePage(); }
+        private object Activate_41_HelpPage() { return new global::Runkeeper.HelpPage(); }
+        private object Activate_42_WrapPanel() { return new global::WinRTXamlToolkit.Controls.WrapPanel(); }
+        private object Activate_46_HistoryRoutePage() { return new global::Runkeeper.HistoryRoutePage(); }
+        private object Activate_47_MainPage() { return new global::Runkeeper.MainPage(); }
+        private object Activate_48_MapPage() { return new global::Runkeeper.MapPage(); }
+        private object Activate_49_RunningPage() { return new global::Runkeeper.RunningPage(); }
+        private object Activate_50_SettingsPage() { return new global::Runkeeper.SettingsPage(); }
+        private void VectorAdd_2_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>)instance;
             var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_8_ObservableCollection(object instance, object item)
+        private void VectorAdd_5_ObservableCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_9_Collection(object instance, object item)
+        private void VectorAdd_6_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::System.Object>)instance;
             var newItem = (global::System.Object)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_10_Collection(object instance, object item)
+        private void VectorAdd_7_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>)instance;
             var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_12_ObservableCollection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>)instance;
+            var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener)item;
+            collection.Add(newItem);
+        }
+        private void VectorAdd_13_Collection(object instance, object item)
+        {
+            var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>)instance;
+            var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener)item;
             collection.Add(newItem);
         }
         private void VectorAdd_15_ObservableCollection(object instance, object item)
         {
-            var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>)instance;
-            var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener)item;
+            var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>)instance;
+            var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_16_Collection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>)instance;
-            var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_18_ObservableCollection(object instance, object item)
+        private void VectorAdd_16_ReadOnlyCollection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>)instance;
             var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis)item;
             collection.Add(newItem);
         }
-        private void VectorAdd_19_ReadOnlyCollection(object instance, object item)
-        {
-            var collection = (global::System.Collections.Generic.ICollection<global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>)instance;
-            var newItem = (global::WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis)item;
-            collection.Add(newItem);
-        }
-        private void VectorAdd_21_Collection(object instance, object item)
+        private void VectorAdd_18_Collection(object instance, object item)
         {
             var collection = (global::System.Collections.Generic.ICollection<global::Windows.UI.Xaml.ResourceDictionary>)instance;
             var newItem = (global::Windows.UI.Xaml.ResourceDictionary)item;
@@ -382,24 +379,9 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
             switch (typeIndex)
             {
 
-            case 0:   //  Runkeeper.CreateRoute
-                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_0_CreateRoute;
-                userType.SetIsLocalType();
-                xamlType = userType;
-                break;
-
-            case 1:   //  Windows.UI.Xaml.Controls.Page
-                xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 2:   //  Windows.UI.Xaml.Controls.UserControl
-                xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
-                break;
-
-            case 3:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart
+            case 0:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
-                userType.Activator = Activate_3_Chart;
+                userType.Activator = Activate_0_Chart;
                 userType.SetContentPropertyName("WinRTXamlToolkit.Controls.DataVisualization.Charting.Chart.Series");
                 userType.AddMemberName("Series");
                 userType.AddMemberName("Axes");
@@ -415,49 +397,49 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 4:   //  Windows.UI.Xaml.Controls.Control
+            case 1:   //  Windows.UI.Xaml.Controls.Control
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 5:   //  System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>
+            case 2:   //  System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_5_Collection;
+                userType.CollectionAdd = VectorAdd_2_Collection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 6:   //  Object
+            case 3:   //  Object
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 7:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries
+            case 4:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeries
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.AddMemberName("LegendItems");
                 xamlType = userType;
                 break;
 
-            case 8:   //  System.Collections.ObjectModel.ObservableCollection`1<Object>
+            case 5:   //  System.Collections.ObjectModel.ObservableCollection`1<Object>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<Object>"));
-                userType.CollectionAdd = VectorAdd_8_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_5_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 9:   //  System.Collections.ObjectModel.Collection`1<Object>
+            case 6:   //  System.Collections.ObjectModel.Collection`1<Object>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_9_Collection;
-                userType.CollectionAdd = VectorAdd_9_Collection;
+                userType.Activator = Activate_6_Collection;
+                userType.CollectionAdd = VectorAdd_6_Collection;
                 xamlType = userType;
                 break;
 
-            case 10:   //  System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>
+            case 7:   //  System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_10_Collection;
-                userType.CollectionAdd = VectorAdd_10_Collection;
+                userType.Activator = Activate_7_Collection;
+                userType.CollectionAdd = VectorAdd_7_Collection;
                 xamlType = userType;
                 break;
 
-            case 11:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis
+            case 8:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.AddMemberName("Orientation");
                 userType.AddMemberName("RegisteredListeners");
@@ -465,7 +447,7 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 12:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation
+            case 9:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("None", global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation.None);
                 userType.AddEnumValue("X", global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AxisOrientation.X);
@@ -473,73 +455,73 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 13:   //  System.Enum
+            case 10:   //  System.Enum
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 xamlType = userType;
                 break;
 
-            case 14:   //  System.ValueType
+            case 11:   //  System.ValueType
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
                 xamlType = userType;
                 break;
 
-            case 15:   //  System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>
+            case 12:   //  System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>"));
+                userType.CollectionAdd = VectorAdd_12_ObservableCollection;
+                userType.SetIsReturnTypeStub();
+                xamlType = userType;
+                break;
+
+            case 13:   //  System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>
+                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
+                userType.Activator = Activate_13_Collection;
+                userType.CollectionAdd = VectorAdd_13_Collection;
+                xamlType = userType;
+                break;
+
+            case 14:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener
+                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
+                xamlType = userType;
+                break;
+
+            case 15:   //  System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>
+                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>"));
                 userType.CollectionAdd = VectorAdd_15_ObservableCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 16:   //  System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener>
+            case 16:   //  System.Collections.ObjectModel.ReadOnlyCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.Activator = Activate_16_Collection;
-                userType.CollectionAdd = VectorAdd_16_Collection;
-                xamlType = userType;
-                break;
-
-            case 17:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxisListener
-                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
-                xamlType = userType;
-                break;
-
-            case 18:   //  System.Collections.ObjectModel.ObservableCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>
-                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Collections.ObjectModel.Collection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>"));
-                userType.CollectionAdd = VectorAdd_18_ObservableCollection;
+                userType.CollectionAdd = VectorAdd_16_ReadOnlyCollection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 19:   //  System.Collections.ObjectModel.ReadOnlyCollection`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.IAxis>
-                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_19_ReadOnlyCollection;
-                userType.SetIsReturnTypeStub();
-                xamlType = userType;
-                break;
-
-            case 20:   //  Windows.UI.Xaml.Style
+            case 17:   //  Windows.UI.Xaml.Style
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 21:   //  System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.ResourceDictionary>
+            case 18:   //  System.Collections.ObjectModel.Collection`1<Windows.UI.Xaml.ResourceDictionary>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Object"));
-                userType.CollectionAdd = VectorAdd_21_Collection;
+                userType.CollectionAdd = VectorAdd_18_Collection;
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 22:   //  Windows.UI.Xaml.ResourceDictionary
+            case 19:   //  Windows.UI.Xaml.ResourceDictionary
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 23:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries
+            case 20:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.LineSeries
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>"));
-                userType.Activator = Activate_23_LineSeries;
+                userType.Activator = Activate_20_LineSeries;
                 userType.AddMemberName("Points");
                 userType.AddMemberName("PolylineStyle");
                 xamlType = userType;
                 break;
 
-            case 24:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>
+            case 21:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.LineAreaBaseSeries`1<WinRTXamlToolkit.Controls.DataVisualization.Charting.LineDataPoint>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes"));
                 userType.AddMemberName("DependentRangeAxis");
                 userType.AddMemberName("IndependentAxis");
@@ -548,18 +530,18 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 25:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes
+            case 22:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSingleSeriesWithAxes
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes"));
                 userType.AddMemberName("GlobalSeriesIndex");
                 xamlType = userType;
                 break;
 
-            case 26:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes
+            case 23:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeriesWithAxes
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries"));
                 xamlType = userType;
                 break;
 
-            case 27:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries
+            case 24:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.DataPointSeries
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("WinRTXamlToolkit.Controls.DataVisualization.Charting.Series"));
                 userType.AddMemberName("IndependentValuePath");
                 userType.AddMemberName("DependentValuePath");
@@ -576,7 +558,7 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 28:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.Series
+            case 25:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.Series
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Control"));
                 userType.AddMemberName("Title");
                 userType.AddMemberName("SeriesHost");
@@ -584,41 +566,41 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 29:   //  String
+            case 26:   //  String
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 30:   //  Boolean
+            case 27:   //  Boolean
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 31:   //  Windows.UI.Xaml.Media.PointCollection
+            case 28:   //  Windows.UI.Xaml.Media.PointCollection
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 32:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis
+            case 29:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.IRangeAxis
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 33:   //  System.Nullable`1<Int32>
+            case 30:   //  System.Nullable`1<Int32>
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 34:   //  Windows.UI.Xaml.Data.Binding
+            case 31:   //  Windows.UI.Xaml.Data.Binding
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 35:   //  System.Collections.IEnumerable
+            case 32:   //  System.Collections.IEnumerable
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 36:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence
+            case 33:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.Enum"));
                 userType.AddEnumValue("Simultaneous", global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence.Simultaneous);
                 userType.AddEnumValue("FirstToLast", global::WinRTXamlToolkit.Controls.DataVisualization.Charting.AnimationSequence.FirstToLast);
@@ -626,95 +608,103 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 37:   //  Windows.UI.Xaml.Media.Animation.EasingFunctionBase
+            case 34:   //  Windows.UI.Xaml.Media.Animation.EasingFunctionBase
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 38:   //  TimeSpan
+            case 35:   //  TimeSpan
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("System.ValueType"));
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 39:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost
+            case 36:   //  WinRTXamlToolkit.Controls.DataVisualization.Charting.ISeriesHost
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, null);
                 userType.SetIsReturnTypeStub();
                 xamlType = userType;
                 break;
 
-            case 40:   //  Runkeeper.DataPage
+            case 37:   //  Runkeeper.DataPage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_40_DataPage;
+                userType.Activator = Activate_37_DataPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 41:   //  Runkeeper.FromRoutePage
+            case 38:   //  Windows.UI.Xaml.Controls.Page
+                xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 39:   //  Windows.UI.Xaml.Controls.UserControl
+                xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
+                break;
+
+            case 40:   //  Runkeeper.FromRoutePage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_41_FromRoutePage;
+                userType.Activator = Activate_40_FromRoutePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 42:   //  Runkeeper.HelpPage
+            case 41:   //  Runkeeper.HelpPage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_42_HelpPage;
+                userType.Activator = Activate_41_HelpPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 43:   //  WinRTXamlToolkit.Controls.WrapPanel
+            case 42:   //  WinRTXamlToolkit.Controls.WrapPanel
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Panel"));
-                userType.Activator = Activate_43_WrapPanel;
+                userType.Activator = Activate_42_WrapPanel;
                 userType.AddMemberName("ItemHeight");
                 userType.AddMemberName("ItemWidth");
                 userType.AddMemberName("Orientation");
                 xamlType = userType;
                 break;
 
-            case 44:   //  Windows.UI.Xaml.Controls.Panel
+            case 43:   //  Windows.UI.Xaml.Controls.Panel
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 45:   //  Double
+            case 44:   //  Double
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 46:   //  Windows.UI.Xaml.Controls.Orientation
+            case 45:   //  Windows.UI.Xaml.Controls.Orientation
                 xamlType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlSystemBaseType(typeName, type);
                 break;
 
-            case 47:   //  Runkeeper.HistoryRoutePage
+            case 46:   //  Runkeeper.HistoryRoutePage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_47_HistoryRoutePage;
+                userType.Activator = Activate_46_HistoryRoutePage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 48:   //  Runkeeper.MainPage
+            case 47:   //  Runkeeper.MainPage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_48_MainPage;
+                userType.Activator = Activate_47_MainPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 49:   //  Runkeeper.MapPage
+            case 48:   //  Runkeeper.MapPage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_49_MapPage;
+                userType.Activator = Activate_48_MapPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 50:   //  Runkeeper.RunningPage
+            case 49:   //  Runkeeper.RunningPage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_50_RunningPage;
+                userType.Activator = Activate_49_RunningPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;
 
-            case 51:   //  Runkeeper.SettingsPage
+            case 50:   //  Runkeeper.SettingsPage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_51_SettingsPage;
+                userType.Activator = Activate_50_SettingsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

@@ -33,6 +33,8 @@ namespace Runkeeper
         public bool zoomCenter = true, drawOld = true;
         public bool startApp = true;
         public Time time = new Time();
+
+
         public DataHandler()
         {
             this.walkedRoutes = new ObservableCollection<Route>();
@@ -85,11 +87,14 @@ namespace Runkeeper
         }
 
         public string speedChanges(string speed)
-        {
+        { 
+            
+            
             for(int i = 0; i < currentwalkedRoute.route.Count; i++)
             {
                 if (currentwalkedRoute.route.Count != 0)
                 {
+                
                     DataStamp item = currentwalkedRoute.route[currentwalkedRoute.route.Count - 1];
                     currentSpeed = item.speed.ToString();
                     currentSpeed = speed;
@@ -100,6 +105,7 @@ namespace Runkeeper
                     currentSpeed = "0";
                 }
             }
+           
 
             return currentSpeed;
         }

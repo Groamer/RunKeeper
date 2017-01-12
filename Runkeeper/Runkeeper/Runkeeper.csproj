@@ -105,9 +105,6 @@
       <DependentUpon>HistoryRoutePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DataHandler.cs" />
-    <Compile Include="View\CreateRoute.xaml.cs">
-      <DependentUpon>CreateRoute.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\DataPage.xaml.cs">
       <DependentUpon>DataPage.xaml</DependentUpon>
     </Compile>
@@ -160,10 +157,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\CreateRoute.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\DataPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

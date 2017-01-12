@@ -88,8 +88,8 @@ namespace Runkeeper.Model
         {
             MapPolyline currentline = new MapPolyline
             {
-                StrokeThickness = 11,
-                StrokeColor = Colors.Blue,
+                StrokeThickness = 6,
+                StrokeColor = Colors.Green,
                 StrokeDashed = false,
                 ZIndex = 2
             };

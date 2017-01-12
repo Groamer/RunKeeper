@@ -41,6 +41,12 @@
         <Setter Property="Margin" Value="0,0,0,100"/>
     </Style>
     
+    <Style x:Key="TextBoxStyleMap" TargetType="TextBox">
+        <Setter Property="VerticalAlignment" Value="Center"/>
+        <Setter Property="Margin" Value="0,0,0,10"/>
+        <Setter Property="Background" Value="Gray"/>
+    </Style>
+
     <Style x:Key="ButtonStyleMapPage" TargetType="Button">
         <Setter Property="VerticalAlignment" Value="Bottom"/>
         <Setter Property="HorizontalAlignment" Value="Center"/>

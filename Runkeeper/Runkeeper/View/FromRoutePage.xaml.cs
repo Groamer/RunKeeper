@@ -39,9 +39,9 @@ namespace Runkeeper
 
         private async void Location_OnClick(object sender, RoutedEventArgs e)
         {
-            Geopoint x = App.instance.transfer.data.currentposition.Location;
-            await FindAddress(x);
-            Frame.Navigate(typeof(CreateRoute), new Tuple<string, string>(From.Text, App.instance.transfer.data.to));
+           // Geopoint x = App.instance.transfer.data.currentposition.Location;
+            //await FindAddress(x);
+            //Frame.Navigate(typeof(CreateRoute), new Tuple<string, string>(From.Text, App.instance.transfer.data.to));
         }
 
         public async Task<String> FindAddress(Geopoint p)
