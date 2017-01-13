@@ -107,6 +107,7 @@
       <RootProperty Name="Height" />
       <RootProperty Name="Margin" />
       <RootProperty Name="Foreground" />
+      <RootProperty Name="TextAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="FontFamily" />
     </RootType>

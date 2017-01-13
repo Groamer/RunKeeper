@@ -92,8 +92,8 @@ namespace Runkeeper
         public async Task<Geoposition> startLocating()
         {
             App.instance.transfer.data.startApp = false;
-            this.geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
-            this.geolocator.PositionChanged += Geolocator_PositionChanged;
+            geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
+            geolocator.PositionChanged += Geolocator_PositionChanged;
             var position = await this.geolocator.GetGeopositionAsync();
             return position;
         }
@@ -101,9 +101,9 @@ namespace Runkeeper
         public void StopLocating()
         {
             App.instance.transfer.data.startApp = true;
-            if(this.geolocator != null)
-            this.geolocator.PositionChanged -= Geolocator_PositionChanged;
-            this.geolocator = null;
+            if(geolocator != null)
+            geolocator.PositionChanged -= Geolocator_PositionChanged;
+            geolocator = null;
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -226,17 +226,20 @@ namespace Runkeeper
 
         public async void FromToRoute(string from, string to)
         {
-            App.instance.transfer.data.from = from;
-            App.instance.transfer.data.to = to;
+            if (isRunning)
+            {
+                App.instance.transfer.data.from = from;
+                App.instance.transfer.data.to = to;
 
-            MapLocationFinderResult result = await MapLocationFinder.FindLocationsAsync(from, MapControl1.Center);
-            MapLocation from1 = result.Locations.First();
-            MapControl1.Center = from1.Point;
+                MapLocationFinderResult result = await MapLocationFinder.FindLocationsAsync(from, MapControl1.Center);
+                MapLocation from1 = result.Locations.First();
+                MapControl1.Center = from1.Point;
 
-            result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
+                result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
 
-            maphelper.generateCalculatedRoute(result,from1);
-            UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
+                maphelper.generateCalculatedRoute(result, from1);
+                UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
+            }
         }
 
         private async void StartRunning_Click(object sender, RoutedEventArgs e)
@@ -295,11 +298,9 @@ namespace Runkeeper
                 if ((int)result.Id == 0)
                 {
                     isRunning = false;
-                    string afststring = Afstand.Text;
                     App.instance.transfer.data.time.Stop();
                     App.instance.transfer.data.saveData();
-                    Afstand.Text = afststring;
-                    Velocity.DataContext = Velocity.Text;
+                    StopLocating();
                     MapControl1.MapElements.Clear();
                 }
             }
