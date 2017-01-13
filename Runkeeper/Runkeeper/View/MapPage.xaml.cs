@@ -16,6 +16,7 @@ using System.Diagnostics;
 using Windows.ApplicationModel.Background;
 using Windows.Storage;
 using Windows.UI;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,6 +30,7 @@ namespace Runkeeper
         private MapHelper maphelper = new MapHelper();
         private MapPolyline oldline;
         private Geolocator geolocator;
+        private Boolean isRunning;
         public static MapPage instance;
 
         public MapPage()
@@ -174,7 +176,7 @@ namespace Runkeeper
                     MapControl1.MapElements.Add(oldline);
                 }
             }
-            if (App.instance.transfer.data.currentwalkedRoute.route.Count >= 2)
+            if (App.instance.transfer.data.currentwalkedRoute.route.Count >= 2 && isRunning)
             {
                 if(App.instance.transfer.data.calculatedRoute != null)
                 {
@@ -239,7 +241,8 @@ namespace Runkeeper
 
         private async void StartRunning_Click(object sender, RoutedEventArgs e)
         {
-        
+            isRunning = true;
+
             App.instance.transfer.data.time.Start();
             Geoposition x = await MapPage.instance.startLocating();
 
@@ -279,13 +282,27 @@ namespace Runkeeper
             Popup1.IsOpen = false;
         }
 
-        private void Stopbutton_Click(object sender, RoutedEventArgs e)
+        private async void Stopbutton_Click(object sender, RoutedEventArgs e)
         {
-            string afststring = Afstand.Text;
-            App.instance.transfer.data.time.Stop();
-            App.instance.transfer.data.saveData();
-            Afstand.Text = afststring;
-            Velocity.DataContext = Velocity.Text;
+            if (isRunning)
+            {
+                //show message
+                MessageDialog alert = new MessageDialog("Are you sure you want to stop your workout?");
+                alert.Commands.Add(new UICommand("YES") { Id = 0 });
+                alert.Commands.Add(new UICommand("NO") { Id = 1 });
+                var result = await alert.ShowAsync();
+
+                if ((int)result.Id == 0)
+                {
+                    isRunning = false;
+                    string afststring = Afstand.Text;
+                    App.instance.transfer.data.time.Stop();
+                    App.instance.transfer.data.saveData();
+                    Afstand.Text = afststring;
+                    Velocity.DataContext = Velocity.Text;
+                    MapControl1.MapElements.Clear();
+                }
+            }
         }
     }
 }
