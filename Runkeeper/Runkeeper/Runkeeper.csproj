@@ -112,9 +112,6 @@
       <DependentUpon>DataPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DataStamp.cs" />
-    <Compile Include="View\HelpPage.xaml.cs">
-      <DependentUpon>HelpPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -143,9 +140,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Assets\currentLocation.png" />
-    <Content Include="Assets\hulp.png" />
     <Content Include="Assets\MapIcon.png" />
-    <Content Include="Assets\MapIconHelp.png" />
     <Content Include="Properties\Default.rd.xml" />
     <Content Include="Assets\LockScreenLogo.scale-200.png" />
     <Content Include="Assets\SplashScreen.scale-200.png" />
@@ -169,10 +164,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\FromRoutePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\HelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

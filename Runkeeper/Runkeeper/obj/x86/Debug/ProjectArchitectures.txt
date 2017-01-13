@@ -1,1 +1,1 @@
-C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Runkeeper.csproj;x86
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Runkeeper.csproj;x86
