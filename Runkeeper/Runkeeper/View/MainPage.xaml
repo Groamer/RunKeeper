@@ -42,28 +42,28 @@
                         <ListBoxItem Name="RouteScreen" ManipulationCompleted="MySplitviewPane_ManipulationCompleted" Tapped="RouteScreen_OnTapped">
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE128;"/>
-                                <TextBlock Name="RouteScreenText" Style="{StaticResource RunText}">RouteScherm</TextBlock>
+                                <TextBlock Name="RouteScreenText" Style="{StaticResource RunText}">Map</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
                         <ListBoxItem Name="Grafiek" ManipulationCompleted="MySplitviewPane_ManipulationCompleted">
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE908;"/>
-                                    <TextBlock Name="GrafiekText" Style="{StaticResource RunText}">Grafiek</TextBlock>
+                                    <TextBlock Name="GrafiekText" Style="{StaticResource RunText}">Performance</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
                         <ListBoxItem Name="historische" ManipulationCompleted="MySplitviewPane_ManipulationCompleted">
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE2AD;"/>
-                                    <TextBlock Name="HistorischeText" Style="{StaticResource RunText}">Historische-Route</TextBlock>
+                                    <TextBlock Name="HistorischeText" Style="{StaticResource RunText}">Track History</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
                         <ListBoxItem Name="Settings" ManipulationCompleted="MySplitviewPane_ManipulationCompleted">
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE713;"/>
-                                    <TextBlock Name="InstellingenText" Style="{StaticResource RunText}">Instellingen</TextBlock>
+                                    <TextBlock Name="InstellingenText" Style="{StaticResource RunText}">Settings</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
      

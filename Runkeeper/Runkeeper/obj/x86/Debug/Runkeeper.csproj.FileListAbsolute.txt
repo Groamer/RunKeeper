@@ -494,17 +494,12 @@ C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\D
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\ApplicationInsights.config
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\App.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\DataPage.xbf
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\FromRoutePage.xbf
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\HelpPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\HistoryRoutePage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\MainPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\MapPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\RunkeeperStyle.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\RunningPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\SettingsPage.xbf
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.xr.xml
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.exe
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.pdb
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\resources.pri
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\AppxManifest.xml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\AppxManifest.xml
@@ -625,10 +620,6 @@ D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debu
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\App.g.cs
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\DataPage.g.i.cs
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\DataPage.g.cs
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\FromRoutePage.g.i.cs
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\FromRoutePage.g.cs
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HelpPage.g.i.cs
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HelpPage.g.cs
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HistoryRoutePage.g.i.cs
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HistoryRoutePage.g.cs
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\MainPage.g.i.cs
@@ -642,8 +633,6 @@ D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debu
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\XamlTypeInfo.g.cs
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\App.xaml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\DataPage.xaml
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\FromRoutePage.xaml
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HelpPage.xaml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HistoryRoutePage.xaml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\MainPage.xaml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\MapPage.xaml
@@ -652,8 +641,6 @@ D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debu
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\SettingsPage.xaml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\App.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\DataPage.xbf
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\FromRoutePage.xbf
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HelpPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\HistoryRoutePage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\MainPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\MapPage.xbf
@@ -661,8 +648,6 @@ D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debu
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\RunningPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\SettingsPage.xbf
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\XamlSaveStateFile.xml
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\Runkeeper.exe
-D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\Runkeeper.pdb
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\ResourceHandlingTask.state
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\FxResources.Microsoft.CSharp.SR.resw
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\FxResources.Microsoft.VisualBasic.SR.resw
@@ -735,3 +720,9 @@ D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debu
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\WinRTXamlToolkit.Controls.DataVisualization.pri.xml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\WinRTXamlToolkit.pri.xml
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\ProjectArchitectures.txt
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\TrackMap.exe
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\RunKeeper.xr.xml
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\RunKeeper.exe
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\RunKeeper.pdb
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\RunKeeper.exe
+D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\RunKeeper.pdb

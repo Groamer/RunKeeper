@@ -28,39 +28,38 @@
                 <ColumnDefinition Width="*"/>
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
-                    <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="4">
+            <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="4">
                 <ListView Margin="10" Name="data" ItemsSource="{Binding walkedRoutes, Mode=TwoWay}" IsMultiSelectCheckBoxEnabled="True">
                     <ListView.ItemTemplate>
-                            <DataTemplate>
-                                <controls:WrapPanel>
-                                    <TextBlock Text="Afstand :  " />
-                                    <TextBlock Name="afstand"  Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" />
-                                    <TextBlock Text=" Meter  |" />
-                                    <TextBlock Text=" Datum : " />
-                                    <TextBlock Text="{Binding date, Mode=TwoWay}" FontWeight="Bold" />
-                                </controls:WrapPanel>
-                            </DataTemplate>
-                        </ListView.ItemTemplate>
-                    </ListView>
+                        <DataTemplate>
+                            <controls:WrapPanel>
+                                <TextBlock Text="Distance :  " />
+                                <TextBlock Name="Distance"  Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" />
+                                <TextBlock Text=" Meter  |" />
+                                <TextBlock Text=" Date : " />
+                                <TextBlock Text="{Binding date, Mode=TwoWay}" FontWeight="Bold" />
+                            </controls:WrapPanel>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="2" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-               
-                    <Button Name="SortDistance" Content="Distance" Click="SortDistance_OnClick"/>
+
+                <Button Name="SortDistance" Content="Distance" Click="SortDistance_OnClick"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="4" Grid.ColumnSpan="2" VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                <Button Name="SortDate" Content="Datum" Click="SortDate_OnClick"/>
+                <Button Name="SortDate" Content="Date" Click="SortDate_OnClick"/>
             </StackPanel>
 
             <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
 
-                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="Sorteren: "/>
+                <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="Sort by: "/>
             </StackPanel>
-  
+
         </Grid>
 
-        
     </ScrollViewer>
 </Page>

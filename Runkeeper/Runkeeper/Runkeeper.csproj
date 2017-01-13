@@ -98,9 +98,6 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\FromRoutePage.xaml.cs">
-      <DependentUpon>FromRoutePage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\HistoryRoutePage.xaml.cs">
       <DependentUpon>HistoryRoutePage.xaml</DependentUpon>
     </Compile>
@@ -109,9 +106,6 @@
       <DependentUpon>DataPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DataStamp.cs" />
-    <Compile Include="View\HelpPage.xaml.cs">
-      <DependentUpon>HelpPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -158,14 +152,6 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Page Include="View\DataPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\FromRoutePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\HelpPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
