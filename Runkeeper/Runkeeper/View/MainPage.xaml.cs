@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.IO;
 using System.Linq;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Core;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x409
@@ -45,19 +37,19 @@ namespace Runkeeper
             switch (pagename.ToLower())
             {
                 default:
-                    PageTitle.Text = "";
+                    PageTitle.Text = "Map";
                     break;
                 case "MapPage":
-                    RunList.SelectedIndex = 3;
-                    break;
-                case "SettingsPage":
-                    RunList.SelectedIndex = 5;
-                    break;
-                case "DataPage":
                     RunList.SelectedIndex = 0;
                     break;
-                case "HistoryRoutePage":
+                case "SettingsPage":
                     RunList.SelectedIndex = 1;
+                    break;
+                case "DataPage":
+                    RunList.SelectedIndex = 2;
+                    break;
+                case "HistoryRoutePage":
+                    RunList.SelectedIndex = 3;
                     break;
             }
 
@@ -97,17 +89,17 @@ namespace Runkeeper
             else if (Grafiek.IsSelected)
             {
                 Frame.Navigate(typeof(DataPage));
-                PageTitle.Text = "Grafiek";
+                PageTitle.Text = "Performance";
             }
             else if (historische.IsSelected)
             {
                 Frame.Navigate(typeof(HistoryRoutePage));
-                PageTitle.Text = "Historische Route";
+                PageTitle.Text = "Track History";
             }
             else if (Settings.IsSelected)
             {
                 Frame.Navigate(typeof(SettingsPage));
-                PageTitle.Text = "Instellingen";
+                PageTitle.Text = "Settings";
             }
         }
 

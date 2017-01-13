@@ -4,17 +4,11 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.IO;
-using System.Linq;
-using System.Runtime.Serialization.Json;
-using System.Text;
 using System.Threading.Tasks;
-using Windows.Data.Json;
 using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
-using Windows.UI.Core;
 using Windows.UI.Xaml.Controls.Maps;
 
 namespace Runkeeper
@@ -33,6 +27,8 @@ namespace Runkeeper
         public bool zoomCenter = true, drawOld = true;
         public bool startApp = true;
         public Time time = new Time();
+
+
         public DataHandler()
         {
             this.walkedRoutes = new ObservableCollection<Route>();
@@ -85,11 +81,14 @@ namespace Runkeeper
         }
 
         public string speedChanges(string speed)
-        {
+        { 
+            
+            
             for(int i = 0; i < currentwalkedRoute.route.Count; i++)
             {
                 if (currentwalkedRoute.route.Count != 0)
                 {
+                
                     DataStamp item = currentwalkedRoute.route[currentwalkedRoute.route.Count - 1];
                     currentSpeed = item.speed.ToString();
                     currentSpeed = speed;
@@ -100,6 +99,7 @@ namespace Runkeeper
                     currentSpeed = "0";
                 }
             }
+           
 
             return currentSpeed;
         }

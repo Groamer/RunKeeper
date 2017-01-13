@@ -38,7 +38,7 @@ namespace Runkeeper
             if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentwalkedRoute != null)
             {
                 MapControl1.Center = App.instance.transfer.data.currentposition.Location;
-                MapControl1.ZoomLevel = 16;
+                MapControl1.ZoomLevel = 100;
                 UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
             }
             if(!App.instance.transfer.data.startApp)
@@ -46,6 +46,10 @@ namespace Runkeeper
                 startTracking();
             }
             this.NavigationCacheMode = NavigationCacheMode.Disabled;
+            Velocity.DataContext = App.instance.transfer.data;
+            Time.DataContext = App.instance.transfer.data.time;
+            Afstand.DataContext = App.instance.transfer.data;
+
         }
 
         public async Task<Geoposition> GetPosition()
@@ -142,7 +146,7 @@ namespace Runkeeper
 
         private async void startTracking()
         {
-            MapControl1.ZoomLevel = 16;
+            MapControl1.ZoomLevel = 1;
             Geoposition x = await GetPosition();
             App.instance.transfer.data.startposition = x.Coordinate.Point;
         }
@@ -233,9 +237,18 @@ namespace Runkeeper
             UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
         }
 
-        private void StartRunning_Click(object sender, RoutedEventArgs e)
+        private async void StartRunning_Click(object sender, RoutedEventArgs e)
         {
-            Frame.Navigate(typeof(RunningPage));
+        
+            App.instance.transfer.data.time.Start();
+            Geoposition x = await MapPage.instance.startLocating();
+
+            Afstand.Text = "0";
+
+            Velocity.DataContext = App.instance.transfer.data;
+            Time.DataContext = App.instance.transfer.data.time;
+            Afstand.DataContext = App.instance.transfer.data;
+
         }
 
         private void Activiteiten_Click(object sender, RoutedEventArgs e)
@@ -243,10 +256,7 @@ namespace Runkeeper
             
         }
 
-        private void Route_Click(object sender, RoutedEventArgs e)
-        {
-            Frame.Navigate(typeof(CreateRoute), new Tuple<string, string>(App.instance.transfer.data.from, App.instance.transfer.data.to));
-        }
+        
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -267,6 +277,15 @@ namespace Runkeeper
         {
             MainGrid.Opacity = 1.0;
             Popup1.IsOpen = false;
+        }
+
+        private void Stopbutton_Click(object sender, RoutedEventArgs e)
+        {
+            string afststring = Afstand.Text;
+            App.instance.transfer.data.time.Stop();
+            App.instance.transfer.data.saveData();
+            Afstand.Text = afststring;
+            Velocity.DataContext = Velocity.Text;
         }
     }
 }

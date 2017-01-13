@@ -22,10 +22,10 @@
         </Grid.RowDefinitions>
 
         <RelativePanel Grid.Row="0">
-            <Button x:ConnectionId='16' RelativePanel.AlignLeftWithPanel="True" Name="RunButton"                         VerticalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="28" />
+            <Button x:ConnectionId='14' RelativePanel.AlignLeftWithPanel="True" Name="RunButton"                         VerticalAlignment="Stretch" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" FontSize="28" />
 
             <Viewbox RelativePanel.RightOf="RunButton" RelativePanel.AlignBottomWith="RunButton" StretchDirection="DownOnly" Stretch="UniformToFill" Margin="10,0,10,0">
-                <TextBlock x:ConnectionId='17' FontSize="28" Name="PageTitle"/>
+                <TextBlock x:ConnectionId='15' FontSize="28" Name="PageTitle"/>
             </Viewbox>
         </RelativePanel>
 
@@ -42,48 +42,40 @@
                         <ListBoxItem x:ConnectionId='4' Name="RouteScreen"                                                                                            >
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE128;"/>
-                                <TextBlock x:ConnectionId='13' Name="RouteScreenText" Style="{StaticResource RunText}">RouteScherm</TextBlock>
+                                <TextBlock x:ConnectionId='11' Name="RouteScreenText" Style="{StaticResource RunText}">Map</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
                         <ListBoxItem x:ConnectionId='5' Name="Grafiek"                                                              >
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE908;"/>
-                                    <TextBlock x:ConnectionId='12' Name="GrafiekText" Style="{StaticResource RunText}">Grafiek</TextBlock>
+                                    <TextBlock x:ConnectionId='10' Name="GrafiekText" Style="{StaticResource RunText}">Performance</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
                         <ListBoxItem x:ConnectionId='6' Name="historische"                                                              >
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE2AD;"/>
-                                    <TextBlock x:ConnectionId='11' Name="HistorischeText" Style="{StaticResource RunText}">Historische-Route</TextBlock>
+                                    <TextBlock x:ConnectionId='9' Name="HistorischeText" Style="{StaticResource RunText}">Track History</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
 
                         <ListBoxItem x:ConnectionId='7' Name="Settings"                                                              >
                             <StackPanel Style="{StaticResource RunStackPanel}">
                                 <TextBlock Style="{StaticResource RunIcon}" Text="&#xE713;"/>
-                                    <TextBlock x:ConnectionId='10' Name="InstellingenText" Style="{StaticResource RunText}">Instellingen</TextBlock>
+                                    <TextBlock x:ConnectionId='8' Name="InstellingenText" Style="{StaticResource RunText}">Settings</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
-
-                        <ListBoxItem x:ConnectionId='8' Name="Help"                                                              >
-
-                            <StackPanel Style="{StaticResource RunStackPanel}">
-                                <TextBlock Style="{StaticResource RunIcon}" Text="&#xE897;"/>
-                                <TextBlock x:ConnectionId='9' Name="HelpText" Style="{StaticResource RunText}">Help</TextBlock>
-                            </StackPanel>
-                        </ListBoxItem>
-
+     
                     </ListBox>
                         </Viewbox>
                 </StackPanel>
             </SplitView.Pane>
             <SplitView.Content>
                 <Grid>
-                    <Frame x:ConnectionId='14' Name="Frame"/>
+                    <Frame x:ConnectionId='12' Name="Frame"/>
 
-                    <Grid x:ConnectionId='15' ManipulationMode="TranslateX"
+                    <Grid x:ConnectionId='13' ManipulationMode="TranslateX"
                                                                             
                           Width="10"
                           Background="Transparent"

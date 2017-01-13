@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
-using Windows.Devices.Geolocation.Geofencing;
 using Windows.Foundation;
 using Windows.Services.Maps;
 using Windows.Storage.Streams;
@@ -88,8 +86,8 @@ namespace Runkeeper.Model
         {
             MapPolyline currentline = new MapPolyline
             {
-                StrokeThickness = 11,
-                StrokeColor = Colors.Blue,
+                StrokeThickness = 6,
+                StrokeColor = Colors.Green,
                 StrokeDashed = false,
                 ZIndex = 2
             };

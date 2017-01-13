@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using Windows.UI.Xaml;
 
 
@@ -13,19 +7,23 @@ namespace Runkeeper.ViewModel
 {
     public class Time : INotifyPropertyChanged
     {
-        private DispatcherTimer timer;
+        public DispatcherTimer timer;
         public string stopwatchTime { get; set; }
         private double startTime;
+
+     
+
         public Time()
         {
             startTime = Now;
             timer = new DispatcherTimer();
             timer.Interval = TimeSpan.FromMilliseconds(100);
             timer.Tick += TimerOnTick;
-            stopwatchTime = "0:0:0:0";
+            stopwatchTime = "00:00:00";
         }
 
         public static double Now { get { return (DateTime.Now - new DateTime(1970, 1, 1, 0, 0, 0, DateTimeKind.Utc)).TotalMilliseconds; } }
+
 
         public static string MillisecondsToTime(double millis)
         {
@@ -37,7 +35,8 @@ namespace Runkeeper.ViewModel
             int minuten = (int) millis%60;
             millis /= 60;
             int uren = (int)millis;
-            timestr = uren+ ":" + minuten + ":" + seconde + ":" + millesec; 
+//            timestr = uren+ ":" + minuten + ":" + seconde; 
+            timestr = string.Format("{0:00}:{1:00}:{2:00}", uren, minuten, seconde);
             return timestr;
         }
 

@@ -15,8 +15,8 @@
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Page.Resources>
-    
-    
+
+
 
     <Grid x:ConnectionId='1' Name="MainGrid" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
@@ -37,8 +37,8 @@
             <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
 
-     
-            <Maps:MapControl x:ConnectionId='2'
+
+        <Maps:MapControl x:ConnectionId='2'
              x:Name = "MapControl1"
             Grid.RowSpan = "7"
             Grid.ColumnSpan = "5"
@@ -47,13 +47,22 @@
             TiltInteractionMode = "GestureAndControl"
             MapServiceToken = "xS4vNHeSZFK8abeuR8CL~2uSX4RiX25qGkRIQBRyBfw~AoVbkGgjXqhmrv1XyZPAWMLi74iLFbRI_bG2O5WWFzyO2gAFQkARtwiSsNdjV4kB"/>
 
-        <Button x:ConnectionId='3' Style="{StaticResource ButtonStyleMapPage}" Grid.Row="6" Grid.Column="2" Name="StartRunning" Content="Start Running"                           />
 
-        <RelativePanel Grid.Row="6" Grid.Column="2" Style="{StaticResource RelativePanelStyleMapPage}" Margin="0,50">
-            <Button x:ConnectionId='7' Style="{StaticResource ButtonStyleMapPage}" x:Name="Route" Content="Route"                    />
+
+        <RelativePanel Grid.Row="6" Grid.Column="0" Style="{StaticResource RelativePanelStyleMapPage}" Margin="-1,0,1,-1" Grid.ColumnSpan="5" Height="92" HorizontalAlignment="Right" Width="360" Background="#FFD7D7D7" Opacity="0.7">
+            <TextBlock x:ConnectionId='6' x:Name="Afstand" Grid.Row="6" Text="{Binding currentDistance,Mode=TwoWay}" FontSize="18" Height="28" Margin="77,33,-199,-33" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
+
+            <TextBlock x:ConnectionId='7' x:Name="Timetext" Grid.Row="6" Text="Time" FontSize="18" Height="28" Margin="1,0,-45,0" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
+
+            <Button x:ConnectionId='8' Style="{StaticResource ButtonStyleMapPage}" x:Name="StartRunning" Content="START"                            Margin="258,0,-74,-46" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="99" FontSize="26"/>
+            <TextBlock x:ConnectionId='9' x:Name="Afstandtext" Text="Distance" FontSize="18" Height="28" Margin="0,32,-44,-32" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
+            <TextBlock x:ConnectionId='10' x:Name="Velocitytext" Text="Velocity" FontSize="18" Height="28" Margin="1,64,-45,-64" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
+            <TextBlock x:ConnectionId='11' x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="81,3,-203,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
+            <TextBlock x:ConnectionId='12' x:Name="Velocity" Text="{Binding currentSpeed,Mode=TwoWay}" FontSize="18" Height="28" Margin="77,63,-199,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
+            <Button x:ConnectionId='13' Style="{StaticResource ButtonStyleMapPage}" x:Name="Stopbutton" Content="STOP" Margin="258,0,-74,-90" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="99" FontSize="26" RenderTransformOrigin="0.582,1.628"                         />
         </RelativePanel>
 
-        <Popup x:ConnectionId='4' Margin="10,10,0,13" VerticalOffset="120" HorizontalOffset="70" Name="Popup1" IsOpen="False">
+        <Popup x:ConnectionId='3' Margin="10,10,0,13" VerticalOffset="120" HorizontalOffset="70" Name="Popup1" IsOpen="False">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="Black"
                 BorderThickness="2">
@@ -69,12 +78,12 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
-                     </Grid.ColumnDefinitions>
+                    </Grid.ColumnDefinitions>
                     <StackPanel Grid.Row="0" Grid.Column="2" Background="Transparent">
-                        <Button x:ConnectionId='6' Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Segoe MDL2 Assets" Content="&#xE711;" x:Name="popButton"                           />
+                        <Button x:ConnectionId='5' Background="Transparent" VerticalAlignment="Top" HorizontalAlignment="Right" FontFamily="Segoe MDL2 Assets" Content="&#xE711;" x:Name="popButton"                           />
                     </StackPanel>
                     <StackPanel Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3">
-                        <TextBlock x:ConnectionId='5' VerticalAlignment="Center" HorizontalAlignment="Center" Name="TextPop" TextWrapping="Wrap" Text="U bent hier de vorige keer geweest."/>
+                        <TextBlock x:ConnectionId='4' VerticalAlignment="Center" HorizontalAlignment="Center" Name="TextPop" TextWrapping="Wrap" Text="U bent hier de vorige keer geweest."/>
                     </StackPanel>
                 </Grid>
             </Border>
