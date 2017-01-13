@@ -39,6 +39,7 @@ namespace Runkeeper
             var order = from route in App.instance.transfer.data.walkedRoutes
                         orderby route.totalDistance descending
                         select route;
+
             App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
             NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
             data.ItemsSource = App.instance.transfer.data.walkedRoutes;
@@ -46,7 +47,7 @@ namespace Runkeeper
         }
 
         public void orderbyTime()
-        { 
+        {
             var order = from route in App.instance.transfer.data.walkedRoutes
                         orderby route.date.Date descending
                         select route;
@@ -65,7 +66,6 @@ namespace Runkeeper
         private void SortDate_OnClick(object sender, RoutedEventArgs e)
         {
             orderbyTime();
- 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
