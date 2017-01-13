@@ -1,11 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Windows.Devices.Geolocation;
-using Windows.Devices.Geolocation.Geofencing;
 using Windows.Foundation;
 using Windows.Services.Maps;
 using Windows.Storage.Streams;

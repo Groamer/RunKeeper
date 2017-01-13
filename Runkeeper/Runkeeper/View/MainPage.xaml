@@ -66,15 +66,7 @@
                                     <TextBlock Name="InstellingenText" Style="{StaticResource RunText}">Instellingen</TextBlock>
                             </StackPanel>
                         </ListBoxItem>
-
-                        <ListBoxItem Name="Help" ManipulationCompleted="MySplitviewPane_ManipulationCompleted">
-
-                            <StackPanel Style="{StaticResource RunStackPanel}">
-                                <TextBlock Style="{StaticResource RunIcon}" Text="&#xE897;"/>
-                                <TextBlock Name="HelpText" Style="{StaticResource RunText}">Help</TextBlock>
-                            </StackPanel>
-                        </ListBoxItem>
-
+     
                     </ListBox>
                         </Viewbox>
                 </StackPanel>

@@ -48,19 +48,16 @@ namespace Runkeeper
                     PageTitle.Text = "";
                     break;
                 case "MapPage":
-                    RunList.SelectedIndex = 3;
-                    break;
-                case "SettingsPage":
-                    RunList.SelectedIndex = 5;
-                    break;
-                case "DataPage":
                     RunList.SelectedIndex = 0;
                     break;
-                case "HelpPage":
+                case "SettingsPage":
                     RunList.SelectedIndex = 1;
                     break;
-                case "HistoryRoutePage":
+                case "DataPage":
                     RunList.SelectedIndex = 2;
+                    break;
+                case "HistoryRoutePage":
+                    RunList.SelectedIndex = 3;
                     break;
             }
 
@@ -111,11 +108,6 @@ namespace Runkeeper
             {
                 Frame.Navigate(typeof(SettingsPage));
                 PageTitle.Text = "Instellingen";
-            }
-            else if (Help.IsSelected)
-            {
-                Frame.Navigate(typeof(HelpPage));
-                PageTitle.Text = "Help";
             }
         }
 
