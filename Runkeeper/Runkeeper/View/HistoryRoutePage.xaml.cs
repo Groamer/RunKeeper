@@ -42,29 +42,19 @@ namespace Runkeeper
             App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
             NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
             data.ItemsSource = App.instance.transfer.data.walkedRoutes;
-            PrintRoute<Route>("distance order: ", App.instance.transfer.data.walkedRoutes);
             data.DataContext = App.instance.transfer.data;
         }
 
         public void orderbyTime()
         { 
             var order = from route in App.instance.transfer.data.walkedRoutes
-                        orderby route.date.Second descending
+                        orderby route.date.Date descending
                         select route;
+
             App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
             NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
             data.ItemsSource = App.instance.transfer.data.walkedRoutes;
-            PrintRoute<Route>("distance order: ", App.instance.transfer.data.walkedRoutes);
             data.DataContext = App.instance.transfer.data;
-        }
-
-        static void PrintRoute<T>(string title, IEnumerable<T> Routes)
-        {
-            Debug.WriteLine("{0}:", title);
-            foreach (T routes in Routes)
-            {
-                Debug.WriteLine(routes.ToString());
-            }
         }
 
         private void SortDistance_OnClick(object sender, RoutedEventArgs e)
@@ -75,6 +65,7 @@ namespace Runkeeper
         private void SortDate_OnClick(object sender, RoutedEventArgs e)
         {
             orderbyTime();
+ 
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
