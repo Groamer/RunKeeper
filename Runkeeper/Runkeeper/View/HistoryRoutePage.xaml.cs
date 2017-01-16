@@ -30,42 +30,36 @@ namespace Runkeeper
     {
         public HistoryRoutePage()
         {
-            this.InitializeComponent();
-            this.DataContext = App.instance.transfer.data;
-        }
-
-        public void orderbyDistance()
-        {
-            var order = from route in App.instance.transfer.data.walkedRoutes
-                        orderby route.totalDistance descending
-                        select route;
-
-            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
-            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
-            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
-            data.DataContext = App.instance.transfer.data;
-        }
-
-        public void orderbyTime()
-        {
-            var order = from route in App.instance.transfer.data.walkedRoutes
-                        orderby route.date.Date descending
-                        select route;
-
-            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
-            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
-            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
-            data.DataContext = App.instance.transfer.data;
+            InitializeComponent();
+            DataContext = App.instance.transfer.data;
         }
 
         private void SortDistance_OnClick(object sender, RoutedEventArgs e)
         {
-            orderbyDistance();
+            //order data
+            var order = from route in App.instance.transfer.data.walkedRoutes
+                        orderby route.totalDistance descending
+                        select route;
+
+            //set ordered data
+            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
+            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
+            data.DataContext = App.instance.transfer.data;
         }
 
         private void SortDate_OnClick(object sender, RoutedEventArgs e)
         {
-            orderbyTime();
+            //order data
+            var order = from route in App.instance.transfer.data.walkedRoutes
+                        orderby route.date ascending
+                        select route;
+
+            //set ordered data
+            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
+            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
+            data.DataContext = App.instance.transfer.data;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
