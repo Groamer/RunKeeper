@@ -15,7 +15,7 @@ namespace Runkeeper
 {
     public class DataHandler : INotifyPropertyChanged
     {
-        public Route currentwalkedRoute = new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+        public Route currentwalkedRoute = new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
         public ObservableCollection<Route> walkedRoutes { get; set; }
         public MapIcon currentposition;
         public MapPolyline calculatedRoute;
@@ -41,7 +41,7 @@ namespace Runkeeper
             currentwalkedRoute.totalDistance = double.Parse(currentDistance);
             walkedRoutes.Add(currentwalkedRoute);
             currentDistance = "0";
-            currentwalkedRoute = new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+            currentwalkedRoute = new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
             List<string> list = new List<string>();
             for (int v = 0; v < walkedRoutes.Count; v++)
             {
@@ -71,7 +71,7 @@ namespace Runkeeper
                     }
                     else
                     {
-                        walkedRoutes.Add(new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0));
+                        walkedRoutes.Add(new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0));
                         string[] items = list[i].Split('|');
                         walkedRoutes[walkedRoutes.Count-1].totalDistance = Double.Parse(items[1]);
                         walkedRoutes[walkedRoutes.Count - 1].date = DateTime.Parse(items[2]);

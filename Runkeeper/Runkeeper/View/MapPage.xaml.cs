@@ -299,6 +299,7 @@ namespace Runkeeper
                 {
                     isRunning = false;
                     App.instance.transfer.data.time.Stop();
+                    //GEEF NAAM AAN ROUTE MEE
                     App.instance.transfer.data.saveData();
                     StopLocating();
                     MapControl1.MapElements.Clear();
