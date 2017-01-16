@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
-    <Machine>GAME-PC</Machine>
+    <Machine>DESKTOP-R2765RU</Machine>
     <WindowsUser>Tom Remeeus</WindowsUser>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>
     <TargetOsVersion>10.0</TargetOsVersion>
@@ -10,19 +10,19 @@
     <PackageArchitecture>x86</PackageArchitecture>
     <PackageIdentityName>b650e1ec-b0d6-479e-8560-d2fcf45b4c36</PackageIdentityName>
     <PackageIdentityPublisher>CN=aares</PackageIdentityPublisher>
-    <IntermediateOutputPath>D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\</IntermediateOutputPath>
+    <IntermediateOutputPath>C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\</IntermediateOutputPath>
     <RemoteDeploymentType></RemoteDeploymentType>
     <PackageRegistrationPath></PackageRegistrationPath>
     <RemoveNonLayoutFiles>true</RemoveNonLayoutFiles>
   </PropertyGroup>
   <ItemGroup>
-    <AppXManifest Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\AppxManifest.xml">
+    <AppXManifest Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.exe">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.exe">
       <PackagePath>entrypoint\Runkeeper.exe</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Tom Remeeus\.nuget\packages\Microsoft.ApplicationInsights\1.0.0\lib\portable-win81+wpa81\Microsoft.ApplicationInsights.dll">
@@ -355,52 +355,52 @@
     <AppxPackagedFile Include="C:\Users\Tom Remeeus\.nuget\packages\WinRTXamlToolkit.UWP\1.9.4\lib\uap10.0\WinRTXamlToolkit.dll">
       <PackagePath>WinRTXamlToolkit.dll</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\ApplicationInsights.config">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\ApplicationInsights.config">
       <PackagePath>ApplicationInsights.config</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\currentLocation.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\currentLocation.png">
       <PackagePath>Assets\currentLocation.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\hulp.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\hulp.png">
       <PackagePath>Assets\hulp.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\MapIcon.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\MapIcon.png">
       <PackagePath>Assets\MapIcon.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\MapIconHelp.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\MapIconHelp.png">
       <PackagePath>Assets\MapIconHelp.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\LockScreenLogo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\SplashScreen.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Square150x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Square44x44Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\StoreLogo.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\StoreLogo.png">
       <PackagePath>Assets\StoreLogo.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Wide310x150Logo.scale-200.png">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Properties\Default.rd.xml">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\Properties\Default.rd.xml">
       <PackagePath>Properties\Default.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.xr.xml">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Runkeeper.xr.xml">
       <PackagePath>Runkeeper.xr.xml</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\Windows.winmd">
@@ -424,11 +424,11 @@
     <AppxPackagedFile Include="C:\Users\Tom Remeeus\.nuget\packages\WinRTXamlToolkit.UWP\1.9.4\lib\uap10.0\WinRTXamlToolkit\Properties\WinRTXamlToolkit.UWP.rd.xml">
       <PackagePath>WinRTXamlToolkit\Properties\WinRTXamlToolkit.UWP.rd.xml</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\resources.pri">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\Runkeeper.exe">
+    <AppxPackagedFile Include="C:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\Runkeeper.exe">
       <PackagePath>Runkeeper.exe</PackagePath>
     </AppxPackagedFile>
   </ItemGroup>

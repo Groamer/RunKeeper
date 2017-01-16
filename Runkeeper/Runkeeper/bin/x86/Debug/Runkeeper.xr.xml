@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="walkedRoutes" />
+    <RootPropertyPathName Name="routeHistory" />
     <RootPropertyPathName Name="date" />
     <RootPropertyPathName Name="totalDistance" />
     <RootPropertyPathName Name="currentSpeed" />

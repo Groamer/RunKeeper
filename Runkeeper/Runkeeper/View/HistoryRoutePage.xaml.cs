@@ -37,28 +37,28 @@ namespace Runkeeper
         private void SortDistance_OnClick(object sender, RoutedEventArgs e)
         {
             //order data
-            var order = from route in App.instance.transfer.data.walkedRoutes
+            var order = from route in App.instance.transfer.data.routeHistory
                         orderby route.totalDistance descending
                         select route;
 
             //set ordered data
-            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
-            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
-            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
+            App.instance.transfer.data.routeHistory = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.routeHistory));
+            data.ItemsSource = App.instance.transfer.data.routeHistory;
             data.DataContext = App.instance.transfer.data;
         }
 
         private void SortDate_OnClick(object sender, RoutedEventArgs e)
         {
             //order data
-            var order = from route in App.instance.transfer.data.walkedRoutes
+            var order = from route in App.instance.transfer.data.routeHistory
                         orderby route.date ascending
                         select route;
 
             //set ordered data
-            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
-            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
-            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
+            App.instance.transfer.data.routeHistory = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.routeHistory));
+            data.ItemsSource = App.instance.transfer.data.routeHistory;
             data.DataContext = App.instance.transfer.data;
         }
 

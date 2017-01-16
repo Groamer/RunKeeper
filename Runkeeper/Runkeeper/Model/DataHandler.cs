@@ -15,8 +15,8 @@ namespace Runkeeper
 {
     public class DataHandler : INotifyPropertyChanged
     {
-        public Route currentwalkedRoute = new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
-        public ObservableCollection<Route> walkedRoutes { get; set; }
+        public Route currentRoute = new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+        public ObservableCollection<Route> routeHistory { get; set; }
         public MapIcon currentposition;
         public MapPolyline calculatedRoute;
         public Geopoint startposition;
@@ -31,52 +31,59 @@ namespace Runkeeper
 
         public DataHandler()
         {
-            this.walkedRoutes = new ObservableCollection<Route>();
+            routeHistory = new ObservableCollection<Route>();
             currentDistance = "0";
             currentSpeed = "0";
         }
 
-        public void saveData()
+        public void saveData(String routeName)
         {
-            currentwalkedRoute.totalDistance = double.Parse(currentDistance);
-            walkedRoutes.Add(currentwalkedRoute);
+            currentRoute.totalDistance = double.Parse(currentDistance);
+            routeHistory.Add(currentRoute);
             currentDistance = "0";
-            currentwalkedRoute = new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+            currentRoute = new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0);
             List<string> list = new List<string>();
-            for (int v = 0; v < walkedRoutes.Count; v++)
+            for (int v = 0; v < routeHistory.Count; v++)
             {
-                list.Add("route" + "|" + walkedRoutes[v].totalDistance + "|" + walkedRoutes[v].date.ToString());
-                for (int i = 0; i < walkedRoutes[v].route.Count; i++)
+                list.Add("route" + "|" + routeName + "|" + routeHistory[v].totalDistance + "|" + routeHistory[v].date.ToString());
+                for (int i = 0; i < routeHistory[v].route.Count; i++)
                 {
-                    list.Add(walkedRoutes[v].route[i].location.Position.Latitude + "|" + walkedRoutes[v].route[i].location.Position.Longitude + "|"
-                    + walkedRoutes[v].route[i].time.ToString() + "|" + walkedRoutes[v].route[i].speed + "|" + walkedRoutes[v].route[i].distance);
+                    list.Add(routeHistory[v].route[i].location.Position.Latitude + "|" + routeHistory[v].route[i].location.Position.Longitude + "|"
+                    + routeHistory[v].route[i].time.ToString() + "|" + routeHistory[v].route[i].speed + "|" + routeHistory[v].route[i].distance);
                 }
             }
-            File.WriteAllLines(ApplicationData.Current.LocalFolder.Path + "//something.txt", list);
+            File.WriteAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt", list);
         }
 
         public void loadData()
         {
-            if (File.Exists(ApplicationData.Current.LocalFolder.Path + "//something.txt"))
+            if (File.Exists(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt"))
             {
-                walkedRoutes = new ObservableCollection<Route>();
-                string[] list = File.ReadAllLines(ApplicationData.Current.LocalFolder.Path + "//something.txt");
+                routeHistory = new ObservableCollection<Route>();
+                string[] list = File.ReadAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt");
+                
+                foreach (String temp in list)
+                {
+                    System.Diagnostics.Debug.WriteLine(temp);
+                }
+
+                /*
                 for (int i = 0; i < list.Length; i++)
                 {
                     if (!list[i].StartsWith("route"))
                     {
                         string[] items = list[i].Split('|');
-                        Geopoint point = new Geopoint(new BasicGeoposition() { Latitude = Double.Parse(items[0]), Longitude = Double.Parse(items[1]) });
-                        walkedRoutes[walkedRoutes.Count - 1].route.Add(new DataStamp(point, DateTime.Parse(items[2]), Double.Parse(items[3]), Double.Parse(items[4])));
+                        Geopoint point = new Geopoint(new BasicGeoposition() { Latitude = Double.Parse(items[1]), Longitude = Double.Parse(items[2]) });
+                        routeHistory[routeHistory.Count - 2].route.Add(new DataStamp(point, DateTime.Parse(items[3]), Double.Parse(items[4]), Double.Parse(items[5])));
                     }
                     else
                     {
-                        walkedRoutes.Add(new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0));
+                        routeHistory.Add(new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0));
                         string[] items = list[i].Split('|');
-                        walkedRoutes[walkedRoutes.Count-1].totalDistance = Double.Parse(items[1]);
-                        walkedRoutes[walkedRoutes.Count - 1].date = DateTime.Parse(items[2]);
+                        routeHistory[routeHistory.Count - 1].totalDistance = Double.Parse(items[2]);
+                        routeHistory[routeHistory.Count - 1].date = DateTime.Parse(items[3]);
                     }
-                }
+                }*/
             }
         }
 
@@ -84,12 +91,12 @@ namespace Runkeeper
         { 
             
             
-            for(int i = 0; i < currentwalkedRoute.route.Count; i++)
+            for(int i = 0; i < currentRoute.route.Count; i++)
             {
-                if (currentwalkedRoute.route.Count != 0)
+                if (currentRoute.route.Count != 0)
                 {
                 
-                    DataStamp item = currentwalkedRoute.route[currentwalkedRoute.route.Count - 1];
+                    DataStamp item = currentRoute.route[currentRoute.route.Count - 1];
                     currentSpeed = item.speed.ToString();
                     currentSpeed = speed;
                     NotifyPropertyChanged(nameof(currentSpeed));

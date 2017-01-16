@@ -29,7 +29,7 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="1" Grid.ColumnSpan="4" Grid.RowSpan="4">
-                <ListView x:ConnectionId='3' Margin="10" Name="data" ItemsSource="{Binding walkedRoutes, Mode=TwoWay}" IsMultiSelectCheckBoxEnabled="True">
+                <ListView x:ConnectionId='3' Margin="10" Name="data" ItemsSource="{Binding routeHistory, Mode=TwoWay}" IsMultiSelectCheckBoxEnabled="True">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <controls:WrapPanel>

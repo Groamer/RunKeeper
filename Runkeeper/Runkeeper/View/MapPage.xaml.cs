@@ -37,11 +37,11 @@ namespace Runkeeper
         {
             instance = this;
             this.InitializeComponent();
-            if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentwalkedRoute != null)
+            if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentRoute != null)
             {
                 MapControl1.Center = App.instance.transfer.data.currentposition.Location;
                 MapControl1.ZoomLevel = 100;
-                UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
+                UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
             if(!App.instance.transfer.data.startApp)
             {
@@ -66,7 +66,7 @@ namespace Runkeeper
             GeofenceMonitor.Current.GeofenceStateChanged += Current_GeofenceStateChanged;
             //GeofenceMonitor.Current.StatusChanged += Current_StatusChanged;
   
-            foreach (Route route in App.instance.transfer.data.walkedRoutes)
+            foreach (Route route in App.instance.transfer.data.routeHistory)
             {
                 for (int i = 0; i < route.route.Count; i++)
                 {
@@ -158,17 +158,17 @@ namespace Runkeeper
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 Geoposition x = await maphelper.currentLocation(args.Position);
-                UpdateWalkedRoute(x.Coordinate.Point);
+                UpdateRouteHistory(x.Coordinate.Point);
             });
         }
 
-        private void UpdateWalkedRoute(Geopoint point)
+        private void UpdateRouteHistory(Geopoint point)
         {
             if (App.instance.transfer.data.zoomCenter)
             {
                 MapControl1.Center = point;
             }
-            if (App.instance.transfer.data.drawOld && !MapControl1.MapElements.Contains(oldline) && App.instance.transfer.data.walkedRoutes.Count > 0)
+            if (App.instance.transfer.data.drawOld && !MapControl1.MapElements.Contains(oldline) && App.instance.transfer.data.routeHistory.Count > 0)
             {
                 this.oldline = maphelper.generateOldRoute();
                 if (oldline.Path != null)
@@ -176,7 +176,7 @@ namespace Runkeeper
                     MapControl1.MapElements.Add(oldline);
                 }
             }
-            if (App.instance.transfer.data.currentwalkedRoute.route.Count >= 2 && isRunning)
+            if (App.instance.transfer.data.currentRoute.route.Count >= 2 && isRunning)
             {
                 if(App.instance.transfer.data.calculatedRoute != null)
                 {
@@ -238,7 +238,7 @@ namespace Runkeeper
                 result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
 
                 maphelper.generateCalculatedRoute(result, from1);
-                UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
+                UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
         }
 
@@ -297,12 +297,27 @@ namespace Runkeeper
 
                 if ((int)result.Id == 0)
                 {
+                    //STOP TRACKING
                     isRunning = false;
                     App.instance.transfer.data.time.Stop();
-                    //GEEF NAAM AAN ROUTE MEE
-                    App.instance.transfer.data.saveData();
                     StopLocating();
-                    MapControl1.MapElements.Clear();
+                    //MapControl1.MapElements.Clear();
+
+                    //GEEF NAAM AAN ROUTE MEE
+                    TextBox input = new TextBox();
+                    input.AcceptsReturn = false;
+                    input.Height = 32;
+
+                    ContentDialog setName = new ContentDialog();
+                    setName.Content = input;
+                    setName.Title = "sfnsadfhipusa";
+                    setName.IsSecondaryButtonEnabled = true;
+                    setName.PrimaryButtonText = "Ok";
+
+                    if (await setName.ShowAsync() == ContentDialogResult.Primary)
+                    {
+                        App.instance.transfer.data.saveData(input.Text);
+                    } 
                 }
             }
         }

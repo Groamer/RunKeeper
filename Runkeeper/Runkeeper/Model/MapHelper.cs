@@ -43,14 +43,14 @@ namespace Runkeeper.Model
             double speed = Double.Parse(App.instance.transfer.data.speedChanges(position.Coordinate.Speed.ToString()));
             NotifyPropertyChanged(nameof(App.instance.transfer.data.currentSpeed));
 
-            if (App.instance.transfer.data.currentwalkedRoute.route.Count != 0)
+            if (App.instance.transfer.data.currentRoute.route.Count != 0)
             {
-                double distance = await App.instance.transfer.data.calculateUpdateDistance(App.instance.transfer.data.currentwalkedRoute.route[App.instance.transfer.data.currentwalkedRoute.route.Count - 1].location, position.Coordinate.Point);
-                App.instance.transfer.data.currentwalkedRoute.route.Add(new DataStamp(position.Coordinate.Point, DateTime.Now, speed, distance));
+                double distance = await App.instance.transfer.data.calculateUpdateDistance(App.instance.transfer.data.currentRoute.route[App.instance.transfer.data.currentRoute.route.Count - 1].location, position.Coordinate.Point);
+                App.instance.transfer.data.currentRoute.route.Add(new DataStamp(position.Coordinate.Point, DateTime.Now, speed, distance));
             }
             else
             {
-                App.instance.transfer.data.currentwalkedRoute.route.Add(new DataStamp(position.Coordinate.Point, DateTime.Now, 0, 0));
+                App.instance.transfer.data.currentRoute.route.Add(new DataStamp(position.Coordinate.Point, DateTime.Now, 0, 0));
             }
 
             return position;
@@ -64,7 +64,7 @@ namespace Runkeeper.Model
         public MapPolyline generateOldRoute()
         {
             List<BasicGeoposition> oldpositions = new List<BasicGeoposition>();
-            foreach (Route route in App.instance.transfer.data.walkedRoutes)
+            foreach (Route route in App.instance.transfer.data.routeHistory)
             {
                 for (int i = 0; i < route.route.Count; i++)
                 {
@@ -92,9 +92,9 @@ namespace Runkeeper.Model
                 ZIndex = 2
             };
             List<BasicGeoposition> positions = new List<BasicGeoposition>();
-            for (int i = 0; i < App.instance.transfer.data.currentwalkedRoute.route.Count; i++)
+            for (int i = 0; i < App.instance.transfer.data.currentRoute.route.Count; i++)
             {
-                positions.Add(new BasicGeoposition() { Latitude = App.instance.transfer.data.currentwalkedRoute.route[i].location.Position.Latitude, Longitude = App.instance.transfer.data.currentwalkedRoute.route[i].location.Position.Longitude });
+                positions.Add(new BasicGeoposition() { Latitude = App.instance.transfer.data.currentRoute.route[i].location.Position.Latitude, Longitude = App.instance.transfer.data.currentRoute.route[i].location.Position.Longitude });
             }
             currentline.Path = new Geopath(positions);
             return currentline;

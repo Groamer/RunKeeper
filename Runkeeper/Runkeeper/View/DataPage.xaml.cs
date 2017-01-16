@@ -43,20 +43,20 @@ namespace Runkeeper
         {
             double totalDistance = 0;
             ObservableCollection<TimeDistance> list = new ObservableCollection<TimeDistance>();
-            for (int i = 0; i < App.instance.transfer.data.currentwalkedRoute.route.Count; i++)
+            for (int i = 0; i < App.instance.transfer.data.currentRoute.route.Count; i++)
             {
-                if(App.instance.transfer.data.currentwalkedRoute.route.Count > 10)
+                if(App.instance.transfer.data.currentRoute.route.Count > 10)
                 {
-                    if (i % (App.instance.transfer.data.currentwalkedRoute.route.Count / 10) == 0)
+                    if (i % (App.instance.transfer.data.currentRoute.route.Count / 10) == 0)
                     {
-                        totalDistance += App.instance.transfer.data.currentwalkedRoute.route[i].distance;
-                        list.Add(new TimeDistance { Time = App.instance.transfer.data.currentwalkedRoute.route[i].time.Minute + ":" + App.instance.transfer.data.currentwalkedRoute.route[i].time.Second, Distance = totalDistance });
+                        totalDistance += App.instance.transfer.data.currentRoute.route[i].distance;
+                        list.Add(new TimeDistance { Time = App.instance.transfer.data.currentRoute.route[i].time.Minute + ":" + App.instance.transfer.data.currentRoute.route[i].time.Second, Distance = totalDistance });
                     }
                 }
                 else
                 {
-                    totalDistance += App.instance.transfer.data.currentwalkedRoute.route[i].distance;
-                    list.Add(new TimeDistance { Time = App.instance.transfer.data.currentwalkedRoute.route[i].time.Minute + ":" + App.instance.transfer.data.currentwalkedRoute.route[i].time.Second, Distance = totalDistance });
+                    totalDistance += App.instance.transfer.data.currentRoute.route[i].distance;
+                    list.Add(new TimeDistance { Time = App.instance.transfer.data.currentRoute.route[i].time.Minute + ":" + App.instance.transfer.data.currentRoute.route[i].time.Second, Distance = totalDistance });
                 }
                 
             }

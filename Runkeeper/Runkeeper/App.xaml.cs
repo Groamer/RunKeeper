@@ -104,7 +104,7 @@ namespace Runkeeper
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
-            transfer.data.saveData();
+            transfer.data.saveData("Unfinished route");
             deferral.Complete();
         }
     }
