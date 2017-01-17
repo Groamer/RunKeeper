@@ -30,7 +30,6 @@ namespace Runkeeper
         public bool startApp = true;
         public Time time = new Time();
 
-
         public DataHandler()
         {
             routeHistory = new ObservableCollection<Route>();
@@ -43,15 +42,18 @@ namespace Runkeeper
             //ROUTE PROTOCOL - "route" | ROUTE NAME | TOTAL DISTANCE | COMPLETION DATE
             //ROUTE DETAILS PROTOCOL - LATITUDE | LONGITUDE | CURRENT TIME | CURRENT SPEED | CURRENT TOTAL DISTANCE
 
-            
+            //set current values to current route
             currentRoute.totalDistance = double.Parse(currentDistance);
-
             currentRoute.name = name;
 
+            //add currentroute to history list
             routeHistory.Add(currentRoute);
+
+            //reset current distance to correct mapview values
             currentDistance = "0";
 
-            //currentRoute = new Route(name, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+            //Set current route to null to correct mapview
+            currentRoute = new Route(name, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
 
             List<string> list = new List<string>();
 
@@ -84,6 +86,11 @@ namespace Runkeeper
             {
                 routeHistory = new ObservableCollection<Route>();
                 string[] list = File.ReadAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt");
+
+                foreach (string temp in list)
+                {
+                    System.Diagnostics.Debug.WriteLine(temp);
+                }
 
                 for (int i = 0; i < list.Length; i ++)
                 {
