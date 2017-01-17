@@ -46,12 +46,7 @@
                             </StackPanel>
                         </ListBoxItem>
 
-                        <ListBoxItem Name="Grafiek" ManipulationCompleted="MySplitviewPane_ManipulationCompleted">
-                            <StackPanel Style="{StaticResource RunStackPanel}">
-                                <TextBlock Style="{StaticResource RunIcon}" Text="&#xE908;"/>
-                                    <TextBlock Name="GrafiekText" Style="{StaticResource RunText}">Performance</TextBlock>
-                            </StackPanel>
-                        </ListBoxItem>
+                       
 
                         <ListBoxItem Name="historische" ManipulationCompleted="MySplitviewPane_ManipulationCompleted">
                             <StackPanel Style="{StaticResource RunStackPanel}">

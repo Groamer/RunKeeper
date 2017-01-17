@@ -10,6 +10,7 @@ using Windows.Devices.Geolocation;
 using Windows.Services.Maps;
 using Windows.Storage;
 using Windows.UI.Xaml.Controls.Maps;
+using Microsoft.ApplicationInsights.DataContracts;
 
 namespace Runkeeper
 {
@@ -123,8 +124,15 @@ namespace Runkeeper
                 if (currentRoute.route.Count != 0)
                 {
                     DataStamp item = currentRoute.route[currentRoute.route.Count - 1];
+
                     currentSpeed = item.speed.ToString();
                     currentSpeed = speed;
+
+                    //round down to 2 decimals on screen
+
+                    double metricSpeed = Double.Parse(currentSpeed);
+                    metricSpeed = Math.Round(metricSpeed*3.6, 1);
+                    currentSpeed = metricSpeed.ToString();
                     NotifyPropertyChanged(nameof(currentSpeed));
                 }
                 else
@@ -132,7 +140,7 @@ namespace Runkeeper
                     currentSpeed = "0";
                 }
             }
-
+          
             return currentSpeed;
         }
 

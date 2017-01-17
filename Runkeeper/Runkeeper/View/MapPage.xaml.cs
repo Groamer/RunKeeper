@@ -151,7 +151,7 @@ namespace Runkeeper
 
         private async void startTracking()
         {
-            MapControl1.ZoomLevel = 1;
+            MapControl1.ZoomLevel = 12;
             Geoposition x = await GetPosition();
             App.instance.transfer.data.startposition = x.Coordinate.Point;
         }
@@ -188,39 +188,7 @@ namespace Runkeeper
             }
         }
 
-        async private void OnCompleted(IBackgroundTaskRegistration sender, BackgroundTaskCompletedEventArgs e)
-        {
-            if (sender != null)
-            {
-                // Update the UI with progress reported by the background task.
-                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                {
-                    try
-                    {
-                        // If the background task threw an exception, display the exception in
-                        // the error text box.
-                        e.CheckResult();
-
-                        // Update the UI with the completion status of the background task.
-                        // The Run method of the background task sets the LocalSettings. 
-                        var settings = ApplicationData.Current.LocalSettings;
-
-                        // Get the status.
-                        if (settings.Values.ContainsKey("Status"))
-                        {
-                           Debug.WriteLine(settings.Values["Status"].ToString());
-                        }
-
-                        // Do your app work here.
-
-                    }
-                    catch (Exception ex)
-                    {
-                        throw ex;
-                    }
-                });
-            }
-        }
+        
 
         public async void FromToRoute(string from, string to)
         {
@@ -250,6 +218,7 @@ namespace Runkeeper
             App.instance.transfer.data.time.Start();
             Geoposition x = await MapPage.instance.startLocating();
             Afstand.Text = "0";
+            Velocity.Text = "0";
 
             Velocity.DataContext = App.instance.transfer.data;
             Time.DataContext = App.instance.transfer.data.time;
@@ -296,7 +265,7 @@ namespace Runkeeper
                     Stopbutton.IsEnabled = false;
                     App.instance.transfer.data.time.Stop();
                     StopLocating();
-                    //MapControl1.MapElements.Clear();
+                    MapControl1.MapElements.Clear();
 
                     //GEEF NAAM AAN ROUTE MEE
                     TextBox input = new TextBox();
@@ -306,9 +275,10 @@ namespace Runkeeper
                     setName.Content = input;
                     setName.Title = "Enter a name for this workout...";
                     setName.IsSecondaryButtonEnabled = true;
-                    setName.PrimaryButtonText = "SAVE WORKOUT";
+                    setName.PrimaryButtonText = "DISCARD WORKOUT";
+                    setName.SecondaryButtonText = "SAVE WORKOUT";
 
-                    if (await setName.ShowAsync() == ContentDialogResult.Primary)
+                    if (await setName.ShowAsync() == ContentDialogResult.Secondary)
                     {
                         App.instance.transfer.data.name = input.Text;
                         App.instance.transfer.data.SaveData();
