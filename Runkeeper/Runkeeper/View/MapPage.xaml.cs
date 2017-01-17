@@ -38,21 +38,20 @@ namespace Runkeeper
 
             Stopbutton.IsEnabled = false;
 
-            if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentRoute != null)
+            if (App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentRoute != null)
             {
                 MapControl1.Center = App.instance.transfer.data.currentposition.Location;
                 MapControl1.ZoomLevel = 100;
                 UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
-            if(!App.instance.transfer.data.startApp)
+            if (!App.instance.transfer.data.startApp)
             {
                 startTracking();
             }
-            this.NavigationCacheMode = NavigationCacheMode.Disabled;
+            NavigationCacheMode = NavigationCacheMode.Disabled;
             Velocity.DataContext = App.instance.transfer.data;
             Time.DataContext = App.instance.transfer.data.time;
             Afstand.DataContext = App.instance.transfer.data;
-
         }
 
         public async Task<Geoposition> GetPosition()
@@ -89,26 +88,6 @@ namespace Runkeeper
             return await startLocating();
         }
 
-        public async Task<Geoposition> startLocating()
-        {
-            App.instance.transfer.data.startApp = false;
-            geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
-            geolocator.PositionChanged += Geolocator_PositionChanged;
-            var position = await geolocator.GetGeopositionAsync();
-            return position;
-        }
-
-        public void StopLocating()
-        {
-            App.instance.transfer.data.startApp = true;
-            
-            if(geolocator != null)
-            {
-                geolocator.PositionChanged -= Geolocator_PositionChanged;
-                geolocator = null;
-            }
-        }
-
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
             GeofenceMonitor.Current.GeofenceStateChanged -= Current_GeofenceStateChanged;
@@ -136,14 +115,14 @@ namespace Runkeeper
                                 break;
                         }
                         case GeofenceState.Exited:
+                        {
+                            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                             {
-                                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
-                                {
-                                    MainGrid.Opacity = 1.0;
-                                    Popup1.IsOpen = false;
-                                });
-                                break;
-                            }
+                                MainGrid.Opacity = 1.0;
+                                Popup1.IsOpen = false;
+                            });
+                            break;
+                        }
                     }
                 }
             }
@@ -151,9 +130,30 @@ namespace Runkeeper
 
         private async void startTracking()
         {
-            MapControl1.ZoomLevel = 12;
+            MapControl1.ZoomLevel = 100;
             Geoposition x = await GetPosition();
             App.instance.transfer.data.startposition = x.Coordinate.Point;
+        }
+
+        public async Task<Geoposition> startLocating()
+        {
+            App.instance.transfer.data.startApp = false;
+
+            geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
+            geolocator.PositionChanged += Geolocator_PositionChanged;
+            var position = await geolocator.GetGeopositionAsync();
+            return position;
+        }
+
+        public void StopLocating()
+        {
+            App.instance.transfer.data.startApp = true;
+
+            if(geolocator != null)
+            {
+                geolocator.PositionChanged -= Geolocator_PositionChanged;
+                geolocator = null;
+            }
         }
 
         private async void Geolocator_PositionChanged(Geolocator sender, PositionChangedEventArgs args)
@@ -164,7 +164,6 @@ namespace Runkeeper
                 UpdateRouteHistory(x.Coordinate.Point);
             });
         }
-
 
         private void UpdateRouteHistory(Geopoint point)
         {
@@ -204,6 +203,11 @@ namespace Runkeeper
             Velocity.DataContext = App.instance.transfer.data;
             Time.DataContext = App.instance.transfer.data.time;
             Afstand.DataContext = App.instance.transfer.data;
+
+            if (App.instance.transfer.data.currentposition != null)
+            {
+                App.instance.transfer.data.currentposition.Visible = true;
+            }
         }
 
         private void PopButton_OnClick(object sender, RoutedEventArgs e)
@@ -218,7 +222,7 @@ namespace Runkeeper
             {
                 //show message
                 ContentDialog alert = new ContentDialog();
-                alert.Title = "Are you sure?";
+                alert.Title = "Are you sure you want to stop your workout?";
                 alert.PrimaryButtonText ="NO";
                 alert.SecondaryButtonText = "YES";
 
@@ -229,6 +233,7 @@ namespace Runkeeper
                     StartRunning.IsEnabled = true;
                     Stopbutton.IsEnabled = false;
                     App.instance.transfer.data.time.Stop();
+                    App.instance.transfer.data.currentposition.Visible = false;
                     StopLocating();
 
                     //GEEF NAAM AAN ROUTE MEE
@@ -237,10 +242,10 @@ namespace Runkeeper
 
                     ContentDialog setName = new ContentDialog();
                     setName.Content = input;
-                    setName.Title = "Enter a name for this workout...";
+                    setName.Title = "Enter a name for this workout and save it";
                     setName.IsSecondaryButtonEnabled = true;
-                    setName.PrimaryButtonText = "DISCARD WORKOUT";
-                    setName.SecondaryButtonText = "SAVE WORKOUT";
+                    setName.PrimaryButtonText = "DISCARD";
+                    setName.SecondaryButtonText = "SAVE";
 
                     if (await setName.ShowAsync() == ContentDialogResult.Primary)
                     {
