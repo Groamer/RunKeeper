@@ -35,7 +35,10 @@ namespace Runkeeper
         public MapPage()
         {
             instance = this;
-            this.InitializeComponent();
+            InitializeComponent();
+
+            Stopbutton.IsEnabled = false;
+
             if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentRoute != null)
             {
                 MapControl1.Center = App.instance.transfer.data.currentposition.Location;
@@ -244,6 +247,8 @@ namespace Runkeeper
         private async void StartRunning_Click(object sender, RoutedEventArgs e)
         {
             isRunning = true;
+            StartRunning.IsEnabled = false;
+            Stopbutton.IsEnabled = true;
 
             App.instance.transfer.data.time.Start();
             Geoposition x = await MapPage.instance.startLocating();
@@ -291,6 +296,8 @@ namespace Runkeeper
                 {
                     //STOP TRACKING
                     isRunning = false;
+                    StartRunning.IsEnabled = true;
+                    Stopbutton.IsEnabled = false;
                     App.instance.transfer.data.time.Stop();
                     StopLocating();
                     //MapControl1.MapElements.Clear();
