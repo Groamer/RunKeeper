@@ -217,12 +217,12 @@ namespace Runkeeper
             if (isRunning)
             {
                 //show message
-                MessageDialog alert = new MessageDialog("Are you sure you want to stop your workout?");
-                alert.Commands.Add(new UICommand("YES") { Id = 0 });
-                alert.Commands.Add(new UICommand("NO") { Id = 1 });
-                var result = await alert.ShowAsync();
+                ContentDialog alert = new ContentDialog();
+                alert.Title = "Are you sure?";
+                alert.PrimaryButtonText ="NO";
+                alert.SecondaryButtonText = "YES";
 
-                if ((int)result.Id == 0)
+                if (await alert.ShowAsync() == ContentDialogResult.Secondary)
                 {
                     //STOP TRACKING
                     isRunning = false;
