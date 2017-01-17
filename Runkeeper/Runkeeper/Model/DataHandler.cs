@@ -37,16 +37,21 @@ namespace Runkeeper
             currentSpeed = "0";
         }
 
-        public void saveData()
+        public void SaveData()
         {
             //ROUTE PROTOCOL - "route" | ROUTE NAME | TOTAL DISTANCE | COMPLETION DATE
             //ROUTE DETAILS PROTOCOL - LATITUDE | LONGITUDE | CURRENT TIME | CURRENT SPEED | CURRENT TOTAL DISTANCE
 
+            
             currentRoute.totalDistance = double.Parse(currentDistance);
+
+            currentRoute.name = name;
+
             routeHistory.Add(currentRoute);
             currentDistance = "0";
 
-            currentRoute = new Route(name, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+            //currentRoute = new Route(name, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+
             List<string> list = new List<string>();
 
             //loop all routes
@@ -69,7 +74,7 @@ namespace Runkeeper
             File.WriteAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt", list);
         }
 
-        public void loadData()
+        public void LoadData()
         {
             //ROUTE PROTOCOL - "route" | ROUTE NAME | TOTAL DISTANCE | COMPLETION DATE
             //ROUTE DETAILS PROTOCOL - LATITUDE | LONGITUDE | CURRENT TIME | CURRENT SPEED | CURRENT TOTAL DISTANCE

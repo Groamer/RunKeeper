@@ -309,7 +309,7 @@ namespace Runkeeper
                     if (await setName.ShowAsync() == ContentDialogResult.Primary)
                     {
                         App.instance.transfer.data.name = input.Text;
-                        App.instance.transfer.data.saveData();
+                        App.instance.transfer.data.SaveData();
                     }
                 }
             }
