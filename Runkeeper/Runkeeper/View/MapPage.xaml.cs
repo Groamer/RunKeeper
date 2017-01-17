@@ -15,7 +15,6 @@ using Windows.Devices.Geolocation.Geofencing;
 using System.Diagnostics;
 using Windows.ApplicationModel.Background;
 using Windows.Storage;
-using Windows.UI;
 using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238

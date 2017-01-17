@@ -52,7 +52,7 @@ namespace Runkeeper
         {
             //order data
             var order = from route in App.instance.transfer.data.routeHistory
-                        orderby route.name descending
+                        orderby route.name ascending
                         select route;
 
             //set ordered data
