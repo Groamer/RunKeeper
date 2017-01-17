@@ -11,7 +11,7 @@
     mc:Ignorable="d">
 
     <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled">
-        <Grid Background="Black">
+        <Grid Background="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="*"/>
@@ -29,17 +29,17 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
             <StackPanel Grid.Row="1" Grid.ColumnSpan="5" Grid.RowSpan="5">
-                <ListView x:ConnectionId='4' Margin="10" x:Name="data" ItemsSource="{Binding routeHistory, Mode=TwoWay}" IsMultiSelectCheckBoxEnabled="True">
+                <ListView x:ConnectionId='4' Margin="10" x:Name="data" ItemsSource="{Binding routeHistory, Mode=TwoWay}" IsMultiSelectCheckBoxEnabled="True" Background="LightGray">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <controls:WrapPanel>
                                 <!--TextBlock x:Name="Distance"  Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" /-->
-                                <TextBlock Text="Name: "/>
-                                <TextBlock Text="{Binding name, Mode=TwoWay}" FontWeight="Bold"/>
-                                <TextBlock Text=" Date : "/>
-                                <TextBlock Text="{Binding date, Mode=TwoWay}" FontWeight="Bold" />
-                                <TextBlock Text="Distance: "/>
-                                <TextBlock Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold"/>
+                                <TextBlock Text="Name: " Foreground="Black"/>
+                                <TextBlock Text="{Binding name, Mode=TwoWay}" FontWeight="Bold" Foreground="Black"/>
+                                <TextBlock Text="Date : " Foreground="Black"/>
+                                <TextBlock Text="{Binding date, Mode=TwoWay}" FontWeight="Bold" Foreground="Black" />
+                                <TextBlock Text="Distance: " Foreground="Black"/>
+                                <TextBlock Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" Foreground="Black"/>
                             </controls:WrapPanel>
                         </DataTemplate>
                     </ListView.ItemTemplate>
@@ -51,9 +51,9 @@
             <StackPanel Grid.Row="0" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center"/>
 
             <TextBlock VerticalAlignment="Center" HorizontalAlignment="Right" Text="Sort list by: " Grid.ColumnSpan="2" Margin="0,41,29,45.667"/>
-            <Button x:ConnectionId='1' x:Name="SortName" Content="Name"                          Margin="10,35,0,39.667" Grid.Column="3" Grid.ColumnSpan="2"/>
-            <Button x:ConnectionId='2' x:Name="SortDistance" Content="Distance"                              Grid.ColumnSpan="2" Grid.Column="4" Margin="33,35,0,39.667"/>
-            <Button x:ConnectionId='3' x:Name="SortDate" Content="Date"                          Grid.Column="2" Margin="0,35,0,39.667" Width="50"/>
+            <Button x:ConnectionId='1' x:Name="SortName" Content="Name"                          Margin="10,35,0,39.667" Grid.Column="3" Grid.ColumnSpan="2" Foreground="Black" Background="#33ABABAB"/>
+            <Button x:ConnectionId='2' x:Name="SortDistance" Content="Distance"                              Grid.ColumnSpan="2" Grid.Column="4" Margin="33,35,0,39.667" Foreground="Black" Background="#33ABABAB"/>
+            <Button x:ConnectionId='3' x:Name="SortDate" Content="Date"                          Grid.Column="2" Margin="0,35,0,39.667" Width="50" Foreground="Black" Background="#33ABABAB"/>
         </Grid>
     </ScrollViewer>
 </Page>
