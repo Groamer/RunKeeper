@@ -16,20 +16,6 @@ namespace Runkeeper.Model
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public static async Task<MapLocation> FindLocation(string location, Geopoint reference)
-        {
-            MapLocationFinderResult result = await MapLocationFinder.FindLocationsAsync(location, reference);
-            MapLocation from = result.Locations.First();
-            return from;
-        }
-
-        public static async Task<MapRoute> FindRunnerRoute(Geopoint from, Geopoint to)
-        {
-            MapRouteFinderResult routeResult = await MapRouteFinder.GetWalkingRouteAsync(from, to);
-            MapRoute b = routeResult.Route;
-            return b;
-        }
-
         public async Task<Geoposition> CurrentLocation(Geoposition position)
         {
             if (App.instance.transfer.data.currentposition == null)
@@ -77,24 +63,6 @@ namespace Runkeeper.Model
             }
             currentline.Path = new Geopath(positions);
             return currentline;
-        }
-
-        public async void GenerateCalculatedRoute(MapLocationFinderResult result, MapLocation from1)
-        {
-            MapLocation to1 = result.Locations.First();
-            MapRouteFinderResult routeresult = await MapRouteFinder.GetWalkingRouteAsync(from1.Point, to1.Point);
-
-            MapRoute map1 = routeresult.Route;
-
-            var color = Colors.Red;
-            App.instance.transfer.data.calculatedRoute = new MapPolyline
-            {
-                StrokeThickness = 11,
-                StrokeColor = color,
-                StrokeDashed = false,
-                ZIndex = 2
-            };
-            App.instance.transfer.data.calculatedRoute.Path = new Geopath(map1.Path.Positions);
         }
     }
 }

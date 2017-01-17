@@ -60,7 +60,6 @@ namespace Runkeeper
             //loop all routes
             for (int v = 0; v < routeHistory.Count; v ++)
             {
-                System.Diagnostics.Debug.WriteLine("SLA NAAM OP: " + routeHistory[v].name);
                 //add route to list
                 list.Add("route" + "|" + routeHistory[v].name + "|" + routeHistory[v].totalDistance + "|" + routeHistory[v].date.ToString());
 
@@ -75,6 +74,12 @@ namespace Runkeeper
 
             //save data to file
             File.WriteAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt", list);
+        }
+
+        public void DiscardData()
+        {
+            //Set current route to null to correct mapview
+            currentRoute = new Route(name, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
         }
 
         public void LoadData()

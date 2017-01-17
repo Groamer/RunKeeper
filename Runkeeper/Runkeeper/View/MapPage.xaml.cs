@@ -27,7 +27,6 @@ namespace Runkeeper
     public sealed partial class MapPage : Page
     {
         private MapHelper maphelper = new MapHelper();
-        private MapPolyline oldline;
         private Geolocator geolocator;
         private Boolean isRunning;
         public static MapPage instance;
@@ -66,7 +65,6 @@ namespace Runkeeper
             }
 
             GeofenceMonitor.Current.GeofenceStateChanged += Current_GeofenceStateChanged;
-            //GeofenceMonitor.Current.StatusChanged += Current_StatusChanged;
   
             foreach (Route route in App.instance.transfer.data.routeHistory)
             {
@@ -96,17 +94,19 @@ namespace Runkeeper
             App.instance.transfer.data.startApp = false;
             geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
             geolocator.PositionChanged += Geolocator_PositionChanged;
-            var position = await this.geolocator.GetGeopositionAsync();
+            var position = await geolocator.GetGeopositionAsync();
             return position;
         }
 
         public void StopLocating()
         {
             App.instance.transfer.data.startApp = true;
-            if(geolocator != null)
-            geolocator.PositionChanged -= Geolocator_PositionChanged;
-            geolocator = null;
             
+            if(geolocator != null)
+            {
+                geolocator.PositionChanged -= Geolocator_PositionChanged;
+                geolocator = null;
+            }
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -179,32 +179,13 @@ namespace Runkeeper
                 {
                     MapControl1.MapElements.Add(App.instance.transfer.data.calculatedRoute);
                 }
+
                 MapControl1.MapElements.Add(maphelper.DrawRoute());
             }
 
             if (App.instance.transfer.data.currentposition != null && !MapControl1.MapElements.Contains(App.instance.transfer.data.currentposition))
             {
                 MapControl1.MapElements.Add(App.instance.transfer.data.currentposition);
-            }
-        }
-
-        
-
-        public async void FromToRoute(string from, string to)
-        {
-            if (isRunning)
-            {
-                App.instance.transfer.data.from = from;
-                App.instance.transfer.data.to = to;
-
-                MapLocationFinderResult result = await MapLocationFinder.FindLocationsAsync(from, MapControl1.Center);
-                MapLocation from1 = result.Locations.First();
-                MapControl1.Center = from1.Point;
-
-                result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
-
-                maphelper.GenerateCalculatedRoute(result, from1);
-                UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
         }
 
@@ -216,29 +197,13 @@ namespace Runkeeper
 
             MapControl1.MapElements.Clear();
             App.instance.transfer.data.time.Start();
-            Geoposition x = await MapPage.instance.startLocating();
+            Geoposition x = await startLocating();
             Afstand.Text = "0";
             Velocity.Text = "0";
 
             Velocity.DataContext = App.instance.transfer.data;
             Time.DataContext = App.instance.transfer.data.time;
             Afstand.DataContext = App.instance.transfer.data;
-
-        }
-
-        protected override void OnNavigatedTo(NavigationEventArgs e)
-        {
-            GeofenceMonitor.Current.GeofenceStateChanged += Current_GeofenceStateChanged;
-            //GeofenceMonitor.Current.StatusChanged += Current_StatusChanged;
-            IList<Geofence> list = GeofenceMonitor.Current.Geofences;
-            List<Geofence> geofences = list.ToList();
-            base.OnNavigatedTo(e);
-            var value = (Tuple<string, string,string>)e.Parameter;
-            if(value.Item1.Equals("createroute"))
-            {
-                FromToRoute(value.Item2, value.Item3);
-            }
-            MapControl1.MapElements.Clear();
         }
 
         private void PopButton_OnClick(object sender, RoutedEventArgs e)
@@ -265,7 +230,6 @@ namespace Runkeeper
                     Stopbutton.IsEnabled = false;
                     App.instance.transfer.data.time.Stop();
                     StopLocating();
-                    MapControl1.MapElements.Clear();
 
                     //GEEF NAAM AAN ROUTE MEE
                     TextBox input = new TextBox();
@@ -278,7 +242,11 @@ namespace Runkeeper
                     setName.PrimaryButtonText = "DISCARD WORKOUT";
                     setName.SecondaryButtonText = "SAVE WORKOUT";
 
-                    if (await setName.ShowAsync() == ContentDialogResult.Secondary)
+                    if (await setName.ShowAsync() == ContentDialogResult.Primary)
+                    {
+                        App.instance.transfer.data.DiscardData();
+                    }
+                    else
                     {
                         App.instance.transfer.data.name = input.Text;
                         App.instance.transfer.data.SaveData();
