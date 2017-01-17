@@ -47,6 +47,7 @@ namespace Runkeeper
         {
             App.instance.transfer.data.time.Start();
             Geoposition x = await MapPage.instance.startLocating();
+
         }
     }
 }
