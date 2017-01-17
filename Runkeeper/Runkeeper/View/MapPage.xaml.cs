@@ -106,6 +106,7 @@ namespace Runkeeper
             if(geolocator != null)
             geolocator.PositionChanged -= Geolocator_PositionChanged;
             geolocator = null;
+            
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -159,10 +160,11 @@ namespace Runkeeper
         {
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
-                Geoposition x = await maphelper.currentLocation(args.Position);
+                Geoposition x = await maphelper.CurrentLocation(args.Position);
                 UpdateRouteHistory(x.Coordinate.Point);
             });
         }
+
 
         private void UpdateRouteHistory(Geopoint point)
         {
@@ -170,22 +172,16 @@ namespace Runkeeper
             {
                 MapControl1.Center = point;
             }
-            if (App.instance.transfer.data.drawOld && !MapControl1.MapElements.Contains(oldline) && App.instance.transfer.data.routeHistory.Count > 0)
-            {
-                this.oldline = maphelper.generateOldRoute();
-                if (oldline.Path != null)
-                {
-                    MapControl1.MapElements.Add(oldline);
-                }
-            }
+            
             if (App.instance.transfer.data.currentRoute.route.Count >= 2 && isRunning)
             {
                 if(App.instance.transfer.data.calculatedRoute != null)
                 {
                     MapControl1.MapElements.Add(App.instance.transfer.data.calculatedRoute);
                 }
-                MapControl1.MapElements.Add(maphelper.generateCurrentRoute());
+                MapControl1.MapElements.Add(maphelper.DrawRoute());
             }
+
             if (App.instance.transfer.data.currentposition != null && !MapControl1.MapElements.Contains(App.instance.transfer.data.currentposition))
             {
                 MapControl1.MapElements.Add(App.instance.transfer.data.currentposition);
@@ -239,7 +235,7 @@ namespace Runkeeper
 
                 result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
 
-                maphelper.generateCalculatedRoute(result, from1);
+                maphelper.GenerateCalculatedRoute(result, from1);
                 UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
         }
@@ -250,9 +246,9 @@ namespace Runkeeper
             StartRunning.IsEnabled = false;
             Stopbutton.IsEnabled = true;
 
+            MapControl1.MapElements.Clear();
             App.instance.transfer.data.time.Start();
             Geoposition x = await MapPage.instance.startLocating();
-
             Afstand.Text = "0";
 
             Velocity.DataContext = App.instance.transfer.data;

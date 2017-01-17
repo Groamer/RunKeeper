@@ -30,7 +30,7 @@ namespace Runkeeper.Model
             return b;
         }
 
-        public async Task<Geoposition> currentLocation(Geoposition position)
+        public async Task<Geoposition> CurrentLocation(Geoposition position)
         {
             if (App.instance.transfer.data.currentposition == null)
             {
@@ -61,28 +61,7 @@ namespace Runkeeper.Model
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(v));
         }
 
-        public MapPolyline generateOldRoute()
-        {
-            List<BasicGeoposition> oldpositions = new List<BasicGeoposition>();
-            foreach (Route route in App.instance.transfer.data.routeHistory)
-            {
-                for (int i = 0; i < route.route.Count; i++)
-                {
-                    oldpositions.Add(new BasicGeoposition() { Latitude = route.route[i].location.Position.Latitude, Longitude = route.route[i].location.Position.Longitude });
-                }
-            }
-            MapPolyline oldline = new MapPolyline
-            {
-                StrokeThickness = 11,
-                StrokeColor = Colors.Gray,
-                StrokeDashed = false,
-                ZIndex = 1
-            };
-            oldline.Path = new Geopath(oldpositions);
-            return oldline;
-        }
-
-        public MapPolyline generateCurrentRoute()
+        public MapPolyline DrawRoute()
         {
             MapPolyline currentline = new MapPolyline
             {
@@ -100,7 +79,7 @@ namespace Runkeeper.Model
             return currentline;
         }
 
-        public async void generateCalculatedRoute(MapLocationFinderResult result, MapLocation from1)
+        public async void GenerateCalculatedRoute(MapLocationFinderResult result, MapLocation from1)
         {
             MapLocation to1 = result.Locations.First();
             MapRouteFinderResult routeresult = await MapRouteFinder.GetWalkingRouteAsync(from1.Point, to1.Point);

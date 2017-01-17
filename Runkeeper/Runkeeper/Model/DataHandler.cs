@@ -86,6 +86,11 @@ namespace Runkeeper
                 routeHistory = new ObservableCollection<Route>();
                 string[] list = File.ReadAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt");
 
+                foreach (string temp in list)
+                {
+                    System.Diagnostics.Debug.WriteLine(temp);
+                }
+
                 for (int i = 0; i < list.Length; i ++)
                 {
                     //read details
