@@ -64,7 +64,7 @@ namespace Runkeeper
             }
 
             GeofenceMonitor.Current.GeofenceStateChanged += Current_GeofenceStateChanged;
-  
+
             foreach (Route route in App.instance.transfer.data.routeHistory)
             {
                 for (int i = 0; i < route.route.Count; i++)
@@ -79,7 +79,7 @@ namespace Runkeeper
                             equal = true;
                         }
                     }
-                    if(!equal)
+                    if (!equal)
                     {
                         GeofenceMonitor.Current.Geofences.Add(geofence);
                     }
@@ -88,11 +88,21 @@ namespace Runkeeper
             return await startLocating();
         }
 
-        protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
+        protected override async void OnNavigatingFrom(NavigatingCancelEventArgs e)
         {
-            GeofenceMonitor.Current.GeofenceStateChanged -= Current_GeofenceStateChanged;
-
-            base.OnNavigatingFrom(e);
+            if (isRunning)
+            {
+                //show message
+                ContentDialog alert = new ContentDialog();
+                alert.Title = "Please stop your workout before leaving this screen.";
+                alert.PrimaryButtonText = "OK";
+                e.Cancel = true;
+                await alert.ShowAsync();
+            }
+            else
+            {
+                base.OnNavigatingFrom(e);
+            }
         }
 
         private async void Current_GeofenceStateChanged(GeofenceMonitor sender, object args)
@@ -106,23 +116,23 @@ namespace Runkeeper
                     switch (report.NewState)
                     {
                         case GeofenceState.Entered:
-                        {
-                            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                             {
+                                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                                {
                                     MainGrid.Opacity = 0.10;
                                     Popup1.IsOpen = true;
-                            });
+                                });
                                 break;
-                        }
+                            }
                         case GeofenceState.Exited:
-                        {
-                            await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
                             {
-                                MainGrid.Opacity = 1.0;
-                                Popup1.IsOpen = false;
-                            });
-                            break;
-                        }
+                                await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, () =>
+                                {
+                                    MainGrid.Opacity = 1.0;
+                                    Popup1.IsOpen = false;
+                                });
+                                break;
+                            }
                     }
                 }
             }
@@ -149,7 +159,7 @@ namespace Runkeeper
         {
             App.instance.transfer.data.startApp = true;
 
-            if(geolocator != null)
+            if (geolocator != null)
             {
                 geolocator.PositionChanged -= Geolocator_PositionChanged;
                 geolocator = null;
@@ -171,10 +181,10 @@ namespace Runkeeper
             {
                 MapControl1.Center = point;
             }
-            
+
             if (App.instance.transfer.data.currentRoute.route.Count >= 2 && isRunning)
             {
-                if(App.instance.transfer.data.calculatedRoute != null)
+                if (App.instance.transfer.data.calculatedRoute != null)
                 {
                     MapControl1.MapElements.Add(App.instance.transfer.data.calculatedRoute);
                 }
@@ -223,7 +233,7 @@ namespace Runkeeper
                 //show message
                 ContentDialog alert = new ContentDialog();
                 alert.Title = "Are you sure you want to stop your workout?";
-                alert.PrimaryButtonText ="NO";
+                alert.PrimaryButtonText = "NO";
                 alert.SecondaryButtonText = "YES";
 
                 if (await alert.ShowAsync() == ContentDialogResult.Secondary)

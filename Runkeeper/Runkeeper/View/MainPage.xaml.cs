@@ -18,7 +18,7 @@ namespace Runkeeper
 
         public MainPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             Frame.Navigated += Frame_Navigated;
             SystemNavigationManager.GetForCurrentView().BackRequested += OnBackRequested;
             Frame.Navigate(typeof(MapPage), new Tuple<string,string,string>("mainpage",null,null));
@@ -72,27 +72,34 @@ namespace Runkeeper
 
         private void RunList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            RunView.IsPaneOpen = false;
-            if (RouteScreen.IsSelected)
+            try
             {
-                if (Frame != null)
+                RunView.IsPaneOpen = false;
+                if (RouteScreen.IsSelected)
                 {
-                    if (Frame.CanGoBack)
-                        Frame.BackStack.Clear();
+                    if (Frame != null)
+                    {
+                        if (Frame.CanGoBack)
+                            Frame.BackStack.Clear();
                         Frame.Navigate(typeof(MapPage), new Tuple<string, string, string>("mainpage", null, null));
                         PageTitle.Text = "Map";
+                    }
+                }
+
+                else if (historische.IsSelected)
+                {
+                    Frame.Navigate(typeof(HistoryRoutePage));
+                    PageTitle.Text = "Track History";
+                }
+                else if (Settings.IsSelected)
+                {
+                    Frame.Navigate(typeof(SettingsPage));
+                    PageTitle.Text = "Settings";
                 }
             }
-           
-            else if (historische.IsSelected)
+            catch (Exception ex)
             {
-                Frame.Navigate(typeof(HistoryRoutePage));
-                PageTitle.Text = "Track History";
-            }
-            else if (Settings.IsSelected)
-            {
-                Frame.Navigate(typeof(SettingsPage));
-                PageTitle.Text = "Settings";
+                System.Diagnostics.Debug.WriteLine(ex);
             }
         }
 

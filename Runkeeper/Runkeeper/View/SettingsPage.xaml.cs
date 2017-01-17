@@ -24,7 +24,7 @@ namespace Runkeeper
     {
         public SettingsPage()
         {
-            this.InitializeComponent();
+            InitializeComponent();
             SetOn.IsOn = App.instance.transfer.data.zoomCenter;
             SetOld.IsOn = App.instance.transfer.data.drawOld;
         }
