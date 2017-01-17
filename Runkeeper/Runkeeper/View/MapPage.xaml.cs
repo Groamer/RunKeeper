@@ -257,13 +257,6 @@ namespace Runkeeper
 
         }
 
-        private void Activiteiten_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        
-
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
             GeofenceMonitor.Current.GeofenceStateChanged += Current_GeofenceStateChanged;
@@ -306,18 +299,18 @@ namespace Runkeeper
                     //GEEF NAAM AAN ROUTE MEE
                     TextBox input = new TextBox();
                     input.AcceptsReturn = false;
-                    input.Height = 32;
 
                     ContentDialog setName = new ContentDialog();
                     setName.Content = input;
-                    setName.Title = "sfnsadfhipusa";
+                    setName.Title = "Enter a name for this workout...";
                     setName.IsSecondaryButtonEnabled = true;
-                    setName.PrimaryButtonText = "Ok";
+                    setName.PrimaryButtonText = "SAVE WORKOUT";
 
                     if (await setName.ShowAsync() == ContentDialogResult.Primary)
                     {
-                        App.instance.transfer.data.saveData(input.Text);
-                    } 
+                        App.instance.transfer.data.name = input.Text;
+                        App.instance.transfer.data.saveData();
+                    }
                 }
             }
         }
