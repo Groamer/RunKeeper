@@ -57,10 +57,10 @@
             <Button Style="{StaticResource ButtonStyleMapPage}" x:Name="StartRunning" Content="START" Click="StartRunning_Click" Margin="258,0,-67,-46" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="92" FontSize="26"/>
             <TextBlock x:Name="Afstandtext" Text="Distance" FontSize="18" Height="28" Margin="10,32,-44,-32" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84"/>
             <TextBlock x:Name="Velocitytext" Text="Velocity" FontSize="18" Height="28" Margin="10,64,-45,-64" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
-            <TextBlock x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,3,-205,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="110"/>
+            <TextBlock x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,3,-205,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="159.9"/>
             <TextBlock x:Name="Velocity" Text="{Binding currentSpeed,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,63,-182,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="110"/>
             <Button Style="{StaticResource ButtonStyleMapPage}" x:Name="Stopbutton" Content="STOP" Margin="258,0,-67,-90" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="92" FontSize="26" RenderTransformOrigin="0.582,1.628" Click="Stopbutton_Click"/>
-            <TextBlock x:Name="Timetext_Copy" Text="km" FontSize="18" Margin="209,37,-205,-37" Foreground="Black" HorizontalAlignment="Left" Width="46"/>
+            <TextBlock x:Name="Timetext_Copy" Text="km" FontSize="18" Margin="209,34,-205,-34" Foreground="Black" HorizontalAlignment="Left" Width="46"/>
             <TextBlock x:Name="Timetext_Copy1" Text="km/h" FontSize="18" Height="28" Margin="208,63,-204,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="46"/>
         </RelativePanel>
 

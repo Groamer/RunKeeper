@@ -45,9 +45,6 @@ namespace Runkeeper
                 case "SettingsPage":
                     RunList.SelectedIndex = 1;
                     break;
-                case "DataPage":
-                    RunList.SelectedIndex = 2;
-                    break;
                 case "HistoryRoutePage":
                     RunList.SelectedIndex = 3;
                     break;
@@ -86,11 +83,7 @@ namespace Runkeeper
                         PageTitle.Text = "Map";
                 }
             }
-            else if (Grafiek.IsSelected)
-            {
-                Frame.Navigate(typeof(DataPage));
-                PageTitle.Text = "Performance";
-            }
+           
             else if (historische.IsSelected)
             {
                 Frame.Navigate(typeof(HistoryRoutePage));

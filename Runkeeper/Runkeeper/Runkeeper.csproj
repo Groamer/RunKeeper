@@ -102,9 +102,6 @@
       <DependentUpon>HistoryRoutePage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Model\DataHandler.cs" />
-    <Compile Include="View\DataPage.xaml.cs">
-      <DependentUpon>DataPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="Model\DataStamp.cs" />
     <Compile Include="View\MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
@@ -117,9 +114,6 @@
     <Compile Include="Model\Transfer.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="View\RunningPage.xaml.cs">
-      <DependentUpon>RunningPage.xaml</DependentUpon>
-    </Compile>
     <Compile Include="View\SettingsPage.xaml.cs">
       <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
@@ -151,10 +145,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Page Include="View\DataPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="View\HistoryRoutePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -168,10 +158,6 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RunkeeperStyle.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\RunningPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
