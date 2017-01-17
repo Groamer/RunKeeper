@@ -1,7 +1,9 @@
-﻿using Runkeeper.Model;
+﻿using System;
+using Runkeeper.Model;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 
@@ -68,5 +70,40 @@ namespace Runkeeper
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        private async void Data_OnSelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (data.SelectedIndex != -1 && data.SelectedItem != null)
+            {
+
+                Route r = App.instance.transfer.data.routeHistory.ElementAt(data.SelectedIndex);
+                double speed = 0;
+                foreach (DataStamp d in r.route)
+                {
+                    speed += d.speed;
+                }
+                speed = speed / r.route.Count;
+
+
+                ContentDialog dialog = new ContentDialog();
+                dialog.Title = r.name;
+                dialog.Content = "Date : " + r.date + "\n" + "Distance: " + r.totalDistance + "\n" + "Velocity: " + speed;
+                dialog.PrimaryButtonText = "Close";
+                dialog.SecondaryButtonText = "Draw this route";
+
+                if (await dialog.ShowAsync() == ContentDialogResult.Primary)
+                {
+                }
+                else
+                {   
+                    
+                    //todo draw route
+
+                }
+            }
+        }
+
+
+
     }
 }
