@@ -15,12 +15,13 @@ namespace Runkeeper
 {
     public class DataHandler : INotifyPropertyChanged
     {
-        public Route currentwalkedRoute = new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0);
-        public ObservableCollection<Route> walkedRoutes { get; set; }
+        public Route currentRoute = new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+        public ObservableCollection<Route> routeHistory { get; set; }
         public MapIcon currentposition;
         public MapPolyline calculatedRoute;
         public Geopoint startposition;
         public string from, to;
+        public string name { get; set; }
         public string currentDistance { get; set; }
         public string currentSpeed { get; set; }
         public event PropertyChangedEventHandler PropertyChanged;
@@ -31,50 +32,78 @@ namespace Runkeeper
 
         public DataHandler()
         {
-            this.walkedRoutes = new ObservableCollection<Route>();
+            routeHistory = new ObservableCollection<Route>();
             currentDistance = "0";
             currentSpeed = "0";
         }
 
-        public void saveData()
+        public void SaveData()
         {
-            currentwalkedRoute.totalDistance = double.Parse(currentDistance);
-            walkedRoutes.Add(currentwalkedRoute);
+            //ROUTE PROTOCOL - "route" | ROUTE NAME | TOTAL DISTANCE | COMPLETION DATE
+            //ROUTE DETAILS PROTOCOL - LATITUDE | LONGITUDE | CURRENT TIME | CURRENT SPEED | CURRENT TOTAL DISTANCE
+
+            
+            currentRoute.totalDistance = double.Parse(currentDistance);
+
+            currentRoute.name = name;
+
+            routeHistory.Add(currentRoute);
             currentDistance = "0";
-            currentwalkedRoute = new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+
+            //currentRoute = new Route(name, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+
             List<string> list = new List<string>();
-            for (int v = 0; v < walkedRoutes.Count; v++)
+
+            //loop all routes
+            for (int v = 0; v < routeHistory.Count; v ++)
             {
-                list.Add("route" + "|" + walkedRoutes[v].totalDistance + "|" + walkedRoutes[v].date.ToString());
-                for (int i = 0; i < walkedRoutes[v].route.Count; i++)
+                System.Diagnostics.Debug.WriteLine("SLA NAAM OP: " + routeHistory[v].name);
+                //add route to list
+                list.Add("route" + "|" + routeHistory[v].name + "|" + routeHistory[v].totalDistance + "|" + routeHistory[v].date.ToString());
+
+                //loop all details
+                for (int i = 0; i < routeHistory[v].route.Count; i ++)
                 {
-                    list.Add(walkedRoutes[v].route[i].location.Position.Latitude + "|" + walkedRoutes[v].route[i].location.Position.Longitude + "|"
-                    + walkedRoutes[v].route[i].time.ToString() + "|" + walkedRoutes[v].route[i].speed + "|" + walkedRoutes[v].route[i].distance);
+                    //add details to routehistory
+                    list.Add(routeHistory[v].route[i].location.Position.Latitude + "|" + routeHistory[v].route[i].location.Position.Longitude + "|"
+                    + routeHistory[v].route[i].time.ToString() + "|" + routeHistory[v].route[i].speed + "|" + routeHistory[v].route[i].distance);
                 }
             }
-            File.WriteAllLines(ApplicationData.Current.LocalFolder.Path + "//something.txt", list);
+
+            //save data to file
+            File.WriteAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt", list);
         }
 
-        public void loadData()
+        public void LoadData()
         {
-            if (File.Exists(ApplicationData.Current.LocalFolder.Path + "//something.txt"))
+            //ROUTE PROTOCOL - "route" | ROUTE NAME | TOTAL DISTANCE | COMPLETION DATE
+            //ROUTE DETAILS PROTOCOL - LATITUDE | LONGITUDE | CURRENT TIME | CURRENT SPEED | CURRENT TOTAL DISTANCE
+
+            if (File.Exists(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt"))
             {
-                walkedRoutes = new ObservableCollection<Route>();
-                string[] list = File.ReadAllLines(ApplicationData.Current.LocalFolder.Path + "//something.txt");
-                for (int i = 0; i < list.Length; i++)
+                routeHistory = new ObservableCollection<Route>();
+                string[] list = File.ReadAllLines(ApplicationData.Current.LocalFolder.Path + "//RouteList.txt");
+
+                for (int i = 0; i < list.Length; i ++)
                 {
+                    //read details
                     if (!list[i].StartsWith("route"))
                     {
                         string[] items = list[i].Split('|');
+
                         Geopoint point = new Geopoint(new BasicGeoposition() { Latitude = Double.Parse(items[0]), Longitude = Double.Parse(items[1]) });
-                        walkedRoutes[walkedRoutes.Count - 1].route.Add(new DataStamp(point, DateTime.Parse(items[2]), Double.Parse(items[3]), Double.Parse(items[4])));
+
+                        routeHistory[routeHistory.Count - 1].route.Add(new DataStamp(point, DateTime.Parse(items[2]), Double.Parse(items[3]), Double.Parse(items[4])));
                     }
+                    //read routes
                     else
                     {
-                        walkedRoutes.Add(new Route(DateTime.Now, new ObservableCollection<DataStamp>(), 0));
+                        routeHistory.Add(new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0));
                         string[] items = list[i].Split('|');
-                        walkedRoutes[walkedRoutes.Count-1].totalDistance = Double.Parse(items[1]);
-                        walkedRoutes[walkedRoutes.Count - 1].date = DateTime.Parse(items[2]);
+
+                        routeHistory[routeHistory.Count - 1].name = items[1];
+                        routeHistory[routeHistory.Count - 1].totalDistance = Double.Parse(items[2]);
+                        routeHistory[routeHistory.Count - 1].date = DateTime.Parse(items[3]);
                     }
                 }
             }
@@ -82,14 +111,11 @@ namespace Runkeeper
 
         public string speedChanges(string speed)
         { 
-            
-            
-            for(int i = 0; i < currentwalkedRoute.route.Count; i++)
+            for(int i = 0; i < currentRoute.route.Count; i++)
             {
-                if (currentwalkedRoute.route.Count != 0)
+                if (currentRoute.route.Count != 0)
                 {
-                
-                    DataStamp item = currentwalkedRoute.route[currentwalkedRoute.route.Count - 1];
+                    DataStamp item = currentRoute.route[currentRoute.route.Count - 1];
                     currentSpeed = item.speed.ToString();
                     currentSpeed = speed;
                     NotifyPropertyChanged(nameof(currentSpeed));
@@ -99,7 +125,6 @@ namespace Runkeeper
                     currentSpeed = "0";
                 }
             }
-           
 
             return currentSpeed;
         }
@@ -116,7 +141,6 @@ namespace Runkeeper
             }
             NotifyPropertyChanged(nameof(currentDistance));
             return distance;
-
         }
 
         protected void NotifyPropertyChanged(string propertyName)

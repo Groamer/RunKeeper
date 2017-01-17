@@ -1,23 +1,9 @@
 ﻿using Runkeeper.Model;
-using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.IO;
 using System.Linq;
-using System.Runtime.CompilerServices;
-using System.Runtime.InteropServices.WindowsRuntime;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Windows.UI.Xaml.Controls.Primitives;
-using Windows.UI.Xaml.Data;
-using Windows.UI.Xaml.Input;
-using Windows.UI.Xaml.Media;
-using Windows.UI.Xaml.Navigation;
-using Runkeeper.Annotations;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -30,42 +16,50 @@ namespace Runkeeper
     {
         public HistoryRoutePage()
         {
-            this.InitializeComponent();
-            this.DataContext = App.instance.transfer.data;
-        }
-
-        public void orderbyDistance()
-        {
-            var order = from route in App.instance.transfer.data.walkedRoutes
-                        orderby route.totalDistance descending
-                        select route;
-
-            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
-            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
-            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
-            data.DataContext = App.instance.transfer.data;
-        }
-
-        public void orderbyTime()
-        {
-            var order = from route in App.instance.transfer.data.walkedRoutes
-                        orderby route.date.Date descending
-                        select route;
-
-            App.instance.transfer.data.walkedRoutes = new ObservableCollection<Route>(order);
-            NotifyPropertyChanged(nameof(App.instance.transfer.data.walkedRoutes));
-            data.ItemsSource = App.instance.transfer.data.walkedRoutes;
-            data.DataContext = App.instance.transfer.data;
+            InitializeComponent();
+            DataContext = App.instance.transfer.data;
         }
 
         private void SortDistance_OnClick(object sender, RoutedEventArgs e)
         {
-            orderbyDistance();
+            //order data
+            var order = from route in App.instance.transfer.data.routeHistory
+                        orderby route.totalDistance descending
+                        select route;
+
+            //set ordered data
+            App.instance.transfer.data.routeHistory = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.routeHistory));
+            data.ItemsSource = App.instance.transfer.data.routeHistory;
+            data.DataContext = App.instance.transfer.data;
         }
 
         private void SortDate_OnClick(object sender, RoutedEventArgs e)
         {
-            orderbyTime();
+            //order data
+            var order = from route in App.instance.transfer.data.routeHistory
+                        orderby route.date ascending
+                        select route;
+
+            //set ordered data
+            App.instance.transfer.data.routeHistory = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.routeHistory));
+            data.ItemsSource = App.instance.transfer.data.routeHistory;
+            data.DataContext = App.instance.transfer.data;
+        }
+
+        private void SortName_OnClick(object sender, RoutedEventArgs e)
+        {
+            //order data
+            var order = from route in App.instance.transfer.data.routeHistory
+                        orderby route.name descending
+                        select route;
+
+            //set ordered data
+            App.instance.transfer.data.routeHistory = new ObservableCollection<Route>(order);
+            NotifyPropertyChanged(nameof(App.instance.transfer.data.routeHistory));
+            data.ItemsSource = App.instance.transfer.data.routeHistory;
+            data.DataContext = App.instance.transfer.data;
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

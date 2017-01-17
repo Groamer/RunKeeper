@@ -49,17 +49,17 @@
 
 
 
-        <RelativePanel Grid.Row="6" Grid.Column="0" Style="{StaticResource RelativePanelStyleMapPage}" Margin="-1,0,1,-1" Grid.ColumnSpan="5" Height="92" HorizontalAlignment="Right" Width="360" Background="#FFD7D7D7" Opacity="0.7">
-            <TextBlock x:Name="Afstand" Grid.Row="6" Text="{Binding currentDistance,Mode=TwoWay}" FontSize="18" Height="28" Margin="77,33,-199,-33" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
+        <RelativePanel Grid.Row="6" Grid.Column="0" Style="{StaticResource RelativePanelStyleMapPage}" Margin="0" Grid.ColumnSpan="5" Height="91" HorizontalAlignment="Right" Width="360" Background="#FFD7D7D7" Opacity="0.7">
+            <TextBlock x:Name="Afstand" Grid.Row="6" Text="{Binding currentDistance,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,33,-199,-33" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="154"/>
 
-            <TextBlock x:Name="Timetext" Grid.Row="6" Text="Time" FontSize="18" Height="28" Margin="1,0,-45,0" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
+            <TextBlock x:Name="Timetext" Grid.Row="6" Text="Time" FontSize="18" Height="28" Margin="10,0,-45,0" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
 
-            <Button Style="{StaticResource ButtonStyleMapPage}" x:Name="StartRunning" Content="START" Click="StartRunning_Click" Margin="258,0,-74,-46" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="99" FontSize="26"/>
-            <TextBlock x:Name="Afstandtext" Text="Distance" FontSize="18" Height="28" Margin="0,32,-44,-32" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
-            <TextBlock x:Name="Velocitytext" Text="Velocity" FontSize="18" Height="28" Margin="1,64,-45,-64" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="94"/>
-            <TextBlock x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="81,3,-203,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
-            <TextBlock x:Name="Velocity" Text="{Binding currentSpeed,Mode=TwoWay}" FontSize="18" Height="28" Margin="77,63,-199,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="172"/>
-            <Button Style="{StaticResource ButtonStyleMapPage}" x:Name="Stopbutton" Content="STOP" Margin="258,0,-74,-90" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="99" FontSize="26" RenderTransformOrigin="0.582,1.628" Click="Stopbutton_Click"/>
+            <Button Style="{StaticResource ButtonStyleMapPage}" x:Name="StartRunning" Content="START" Click="StartRunning_Click" Margin="258,0,-67,-46" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="92" FontSize="26"/>
+            <TextBlock x:Name="Afstandtext" Text="Distance" FontSize="18" Height="28" Margin="10,32,-44,-32" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84"/>
+            <TextBlock x:Name="Velocitytext" Text="Velocity" FontSize="18" Height="28" Margin="10,64,-45,-64" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
+            <TextBlock x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,3,-199,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="154"/>
+            <TextBlock x:Name="Velocity" Text="{Binding currentSpeed,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,63,-199,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="154"/>
+            <Button Style="{StaticResource ButtonStyleMapPage}" x:Name="Stopbutton" Content="STOP" Margin="258,0,-67,-90" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="92" FontSize="26" RenderTransformOrigin="0.582,1.628" Click="Stopbutton_Click"/>
         </RelativePanel>
 
         <Popup Margin="10,10,0,13" VerticalOffset="120" HorizontalOffset="70" Name="Popup1" IsOpen="False">

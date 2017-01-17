@@ -16,6 +16,7 @@ using System.Diagnostics;
 using Windows.ApplicationModel.Background;
 using Windows.Storage;
 using Windows.UI;
+using Windows.UI.Popups;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -29,17 +30,18 @@ namespace Runkeeper
         private MapHelper maphelper = new MapHelper();
         private MapPolyline oldline;
         private Geolocator geolocator;
+        private Boolean isRunning;
         public static MapPage instance;
 
         public MapPage()
         {
             instance = this;
             this.InitializeComponent();
-            if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentwalkedRoute != null)
+            if(App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentRoute != null)
             {
                 MapControl1.Center = App.instance.transfer.data.currentposition.Location;
                 MapControl1.ZoomLevel = 100;
-                UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
+                UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
             if(!App.instance.transfer.data.startApp)
             {
@@ -64,7 +66,7 @@ namespace Runkeeper
             GeofenceMonitor.Current.GeofenceStateChanged += Current_GeofenceStateChanged;
             //GeofenceMonitor.Current.StatusChanged += Current_StatusChanged;
   
-            foreach (Route route in App.instance.transfer.data.walkedRoutes)
+            foreach (Route route in App.instance.transfer.data.routeHistory)
             {
                 for (int i = 0; i < route.route.Count; i++)
                 {
@@ -90,8 +92,8 @@ namespace Runkeeper
         public async Task<Geoposition> startLocating()
         {
             App.instance.transfer.data.startApp = false;
-            this.geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
-            this.geolocator.PositionChanged += Geolocator_PositionChanged;
+            geolocator = new Geolocator { DesiredAccuracyInMeters = 0, MovementThreshold = 1 };
+            geolocator.PositionChanged += Geolocator_PositionChanged;
             var position = await this.geolocator.GetGeopositionAsync();
             return position;
         }
@@ -99,9 +101,9 @@ namespace Runkeeper
         public void StopLocating()
         {
             App.instance.transfer.data.startApp = true;
-            if(this.geolocator != null)
-            this.geolocator.PositionChanged -= Geolocator_PositionChanged;
-            this.geolocator = null;
+            if(geolocator != null)
+            geolocator.PositionChanged -= Geolocator_PositionChanged;
+            geolocator = null;
         }
 
         protected override void OnNavigatingFrom(NavigatingCancelEventArgs e)
@@ -156,17 +158,17 @@ namespace Runkeeper
             await Dispatcher.RunAsync(CoreDispatcherPriority.Normal, async () =>
             {
                 Geoposition x = await maphelper.currentLocation(args.Position);
-                UpdateWalkedRoute(x.Coordinate.Point);
+                UpdateRouteHistory(x.Coordinate.Point);
             });
         }
 
-        private void UpdateWalkedRoute(Geopoint point)
+        private void UpdateRouteHistory(Geopoint point)
         {
             if (App.instance.transfer.data.zoomCenter)
             {
                 MapControl1.Center = point;
             }
-            if (App.instance.transfer.data.drawOld && !MapControl1.MapElements.Contains(oldline) && App.instance.transfer.data.walkedRoutes.Count > 0)
+            if (App.instance.transfer.data.drawOld && !MapControl1.MapElements.Contains(oldline) && App.instance.transfer.data.routeHistory.Count > 0)
             {
                 this.oldline = maphelper.generateOldRoute();
                 if (oldline.Path != null)
@@ -174,7 +176,7 @@ namespace Runkeeper
                     MapControl1.MapElements.Add(oldline);
                 }
             }
-            if (App.instance.transfer.data.currentwalkedRoute.route.Count >= 2)
+            if (App.instance.transfer.data.currentRoute.route.Count >= 2 && isRunning)
             {
                 if(App.instance.transfer.data.calculatedRoute != null)
                 {
@@ -224,22 +226,26 @@ namespace Runkeeper
 
         public async void FromToRoute(string from, string to)
         {
-            App.instance.transfer.data.from = from;
-            App.instance.transfer.data.to = to;
+            if (isRunning)
+            {
+                App.instance.transfer.data.from = from;
+                App.instance.transfer.data.to = to;
 
-            MapLocationFinderResult result = await MapLocationFinder.FindLocationsAsync(from, MapControl1.Center);
-            MapLocation from1 = result.Locations.First();
-            MapControl1.Center = from1.Point;
+                MapLocationFinderResult result = await MapLocationFinder.FindLocationsAsync(from, MapControl1.Center);
+                MapLocation from1 = result.Locations.First();
+                MapControl1.Center = from1.Point;
 
-            result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
+                result = await MapLocationFinder.FindLocationsAsync(to, MapControl1.Center);
 
-            maphelper.generateCalculatedRoute(result,from1);
-            UpdateWalkedRoute(App.instance.transfer.data.currentposition.Location);
+                maphelper.generateCalculatedRoute(result, from1);
+                UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
+            }
         }
 
         private async void StartRunning_Click(object sender, RoutedEventArgs e)
         {
-        
+            isRunning = true;
+
             App.instance.transfer.data.time.Start();
             Geoposition x = await MapPage.instance.startLocating();
 
@@ -250,13 +256,6 @@ namespace Runkeeper
             Afstand.DataContext = App.instance.transfer.data;
 
         }
-
-        private void Activiteiten_Click(object sender, RoutedEventArgs e)
-        {
-            
-        }
-
-        
 
         protected override void OnNavigatedTo(NavigationEventArgs e)
         {
@@ -279,13 +278,41 @@ namespace Runkeeper
             Popup1.IsOpen = false;
         }
 
-        private void Stopbutton_Click(object sender, RoutedEventArgs e)
+        private async void Stopbutton_Click(object sender, RoutedEventArgs e)
         {
-            string afststring = Afstand.Text;
-            App.instance.transfer.data.time.Stop();
-            App.instance.transfer.data.saveData();
-            Afstand.Text = afststring;
-            Velocity.DataContext = Velocity.Text;
+            if (isRunning)
+            {
+                //show message
+                MessageDialog alert = new MessageDialog("Are you sure you want to stop your workout?");
+                alert.Commands.Add(new UICommand("YES") { Id = 0 });
+                alert.Commands.Add(new UICommand("NO") { Id = 1 });
+                var result = await alert.ShowAsync();
+
+                if ((int)result.Id == 0)
+                {
+                    //STOP TRACKING
+                    isRunning = false;
+                    App.instance.transfer.data.time.Stop();
+                    StopLocating();
+                    //MapControl1.MapElements.Clear();
+
+                    //GEEF NAAM AAN ROUTE MEE
+                    TextBox input = new TextBox();
+                    input.AcceptsReturn = false;
+
+                    ContentDialog setName = new ContentDialog();
+                    setName.Content = input;
+                    setName.Title = "Enter a name for this workout...";
+                    setName.IsSecondaryButtonEnabled = true;
+                    setName.PrimaryButtonText = "SAVE WORKOUT";
+
+                    if (await setName.ShowAsync() == ContentDialogResult.Primary)
+                    {
+                        App.instance.transfer.data.name = input.Text;
+                        App.instance.transfer.data.SaveData();
+                    }
+                }
+            }
         }
     }
 }

@@ -36,7 +36,7 @@ namespace Runkeeper
         private void Stop_Click(object sender, RoutedEventArgs e)
         {
             App.instance.transfer.data.time.Stop();
-            App.instance.transfer.data.saveData();
+            //App.instance.transfer.data.saveData();
             MapPage.instance.StopLocating();
             TimeBlock.Text = "0:0:0:0";
             speedblock.Text = "0";

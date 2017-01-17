@@ -51,7 +51,7 @@ namespace Runkeeper
                 this.DebugSettings.EnableFrameRateCounter = false;
             }
 #endif
-            transfer.data.loadData();
+            transfer.data.LoadData();
             rootFrame = Window.Current.Content as Frame;
 
             // Do not repeat app initialization when the Window already has content,
@@ -104,7 +104,7 @@ namespace Runkeeper
         {
             var deferral = e.SuspendingOperation.GetDeferral();
             //TODO: Save application state and stop any background activity
-            transfer.data.saveData();
+            transfer.data.SaveData();
             deferral.Complete();
         }
     }
