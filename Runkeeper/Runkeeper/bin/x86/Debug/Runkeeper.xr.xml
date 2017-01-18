@@ -76,6 +76,8 @@
       <RootProperty Name="Inlines" />
       <RootProperty Name="TextWrapping" />
       <RootProperty Name="TextAlignment" />
+      <RootProperty Name="FontStyle" />
+      <RootProperty Name="RenderTransformOrigin" />
       <RootProperty Name="FontFamily" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
@@ -125,8 +127,8 @@
       <RootProperty Name="Height" />
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Width" />
-      <RootProperty Name="Background" />
       <RootProperty Name="Opacity" />
+      <RootProperty Name="Background" />
       <RootMethod Name="GetAlignTopWithPanel" />
       <RootMethod Name="SetAlignTopWithPanel" />
       <RootMethod Name="GetAlignLeftWithPanel" />
@@ -188,6 +190,17 @@
       <RootProperty Name="BorderThickness" />
       <RootProperty Name="Child" />
     </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="OffContent" />
+      <RootProperty Name="OnContent" />
+      <RootEvent Name="Toggled" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.Run">
+      <RootProperty Name="Text" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Documents.LineBreak" />
     <RootType FullName="Runkeeper.MapPage" />
     <RootType FullName="Windows.UI.Xaml.FrameworkElement">
       <RootProperty Name="VerticalAlignment" />
@@ -204,12 +217,5 @@
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
-      <RootProperty Name="Name" />
-      <RootProperty Name="OffContent" />
-      <RootProperty Name="OnContent" />
-      <RootEvent Name="Toggled" />
-    </RootType>
-    <RootType FullName="Runkeeper.SettingsPage" />
   </Roots.RootTypes>
 </Roots>

@@ -30,7 +30,7 @@ namespace Runkeeper
         private Geolocator geolocator;
         private Boolean isRunning;
         public static MapPage instance;
-
+     
         public MapPage()
         {
             instance = this;
@@ -52,7 +52,22 @@ namespace Runkeeper
             Velocity.DataContext = App.instance.transfer.data;
             Time.DataContext = App.instance.transfer.data.time;
             Afstand.DataContext = App.instance.transfer.data;
+            SetOn.IsOn = App.instance.transfer.data.zoomCenter;
+
         }
+
+        private void ToggleSwitch_OnToggled(object sender, RoutedEventArgs e)
+        {
+            if (SetOn.IsOn)
+            {
+                App.instance.transfer.data.setZoomCenter(true);
+            }
+            else
+            {
+                App.instance.transfer.data.setZoomCenter(false);
+            }
+        }
+
 
         public async Task<Geoposition> GetPosition()
         {
