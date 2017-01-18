@@ -42,9 +42,6 @@ namespace Runkeeper
                 case "MapPage":
                     RunList.SelectedIndex = 0;
                     break;
-                case "SettingsPage":
-                    RunList.SelectedIndex = 1;
-                    break;
                 case "HistoryRoutePage":
                     RunList.SelectedIndex = 3;
                     break;
@@ -91,11 +88,7 @@ namespace Runkeeper
                     Frame.Navigate(typeof(HistoryRoutePage));
                     PageTitle.Text = "Track History";
                 }
-                else if (Settings.IsSelected)
-                {
-                    Frame.Navigate(typeof(SettingsPage));
-                    PageTitle.Text = "Settings";
-                }
+               
             }
             catch (Exception ex)
             {

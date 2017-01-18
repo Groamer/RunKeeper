@@ -6,7 +6,6 @@ using System.Linq;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
-using Runkeeper.View;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -88,7 +87,7 @@ namespace Runkeeper
 
                 ContentDialog dialog = new ContentDialog();
                 dialog.Title = r.name;
-                dialog.Content = "Date : " + r.date + "\n" + "Distance: " + r.totalDistance + "\n" + "Velocity: " + speed;
+                dialog.Content = "Date : " + r.date + "\n" + "Distance: " + r.totalDistance + " m" + "\n" + "Velocity: " + Math.Round(speed,1) +"km/h";
                 dialog.PrimaryButtonText = "Close";
                 dialog.SecondaryButtonText = "Draw this route";
 
