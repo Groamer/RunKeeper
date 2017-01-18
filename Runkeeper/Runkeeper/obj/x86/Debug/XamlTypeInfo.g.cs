@@ -156,7 +156,7 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
 
         private void InitTypeTables()
         {
-            _typeNameTable = new string[10];
+            _typeNameTable = new string[11];
             _typeNameTable[0] = "WinRTXamlToolkit.Controls.WrapPanel";
             _typeNameTable[1] = "Windows.UI.Xaml.Controls.Panel";
             _typeNameTable[2] = "Double";
@@ -166,9 +166,10 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
             _typeNameTable[6] = "Windows.UI.Xaml.Controls.UserControl";
             _typeNameTable[7] = "Runkeeper.MainPage";
             _typeNameTable[8] = "Runkeeper.MapPage";
-            _typeNameTable[9] = "Runkeeper.SettingsPage";
+            _typeNameTable[9] = "Runkeeper.View.SavedRoutePage";
+            _typeNameTable[10] = "Runkeeper.SettingsPage";
 
-            _typeTable = new global::System.Type[10];
+            _typeTable = new global::System.Type[11];
             _typeTable[0] = typeof(global::WinRTXamlToolkit.Controls.WrapPanel);
             _typeTable[1] = typeof(global::Windows.UI.Xaml.Controls.Panel);
             _typeTable[2] = typeof(global::System.Double);
@@ -178,7 +179,8 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
             _typeTable[6] = typeof(global::Windows.UI.Xaml.Controls.UserControl);
             _typeTable[7] = typeof(global::Runkeeper.MainPage);
             _typeTable[8] = typeof(global::Runkeeper.MapPage);
-            _typeTable[9] = typeof(global::Runkeeper.SettingsPage);
+            _typeTable[9] = typeof(global::Runkeeper.View.SavedRoutePage);
+            _typeTable[10] = typeof(global::Runkeeper.SettingsPage);
         }
 
         private int LookupTypeIndexByName(string typeName)
@@ -217,7 +219,8 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
         private object Activate_4_HistoryRoutePage() { return new global::Runkeeper.HistoryRoutePage(); }
         private object Activate_7_MainPage() { return new global::Runkeeper.MainPage(); }
         private object Activate_8_MapPage() { return new global::Runkeeper.MapPage(); }
-        private object Activate_9_SettingsPage() { return new global::Runkeeper.SettingsPage(); }
+        private object Activate_9_SavedRoutePage() { return new global::Runkeeper.View.SavedRoutePage(); }
+        private object Activate_10_SettingsPage() { return new global::Runkeeper.SettingsPage(); }
 
         private global::Windows.UI.Xaml.Markup.IXamlType CreateXamlType(int typeIndex)
         {
@@ -279,9 +282,16 @@ namespace Runkeeper.Runkeeper_XamlTypeInfo
                 xamlType = userType;
                 break;
 
-            case 9:   //  Runkeeper.SettingsPage
+            case 9:   //  Runkeeper.View.SavedRoutePage
                 userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
-                userType.Activator = Activate_9_SettingsPage;
+                userType.Activator = Activate_9_SavedRoutePage;
+                userType.SetIsLocalType();
+                xamlType = userType;
+                break;
+
+            case 10:   //  Runkeeper.SettingsPage
+                userType = new global::Runkeeper.Runkeeper_XamlTypeInfo.XamlUserType(this, typeName, type, GetXamlTypeByName("Windows.UI.Xaml.Controls.Page"));
+                userType.Activator = Activate_10_SettingsPage;
                 userType.SetIsLocalType();
                 xamlType = userType;
                 break;

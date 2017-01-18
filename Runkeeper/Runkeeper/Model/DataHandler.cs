@@ -17,6 +17,7 @@ namespace Runkeeper
     public class DataHandler : INotifyPropertyChanged
     {
         public Route currentRoute = new Route(null, DateTime.Now, new ObservableCollection<DataStamp>(), 0);
+        public Route selectedRoute { get; set; }
         public ObservableCollection<Route> routeHistory { get; set; }
         public MapIcon currentposition;
         public MapPolyline calculatedRoute;

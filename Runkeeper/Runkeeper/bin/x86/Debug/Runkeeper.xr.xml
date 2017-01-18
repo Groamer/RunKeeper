@@ -204,6 +204,7 @@
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
+    <RootType FullName="Runkeeper.View.SavedRoutePage" />
     <RootType FullName="Windows.UI.Xaml.Controls.ToggleSwitch">
       <RootProperty Name="Name" />
       <RootProperty Name="OffContent" />

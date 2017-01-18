@@ -6,6 +6,7 @@ using System.Linq;
 using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
+using Runkeeper.View;
 
 // The Blank Page item template is documented at http://go.microsoft.com/fwlink/?LinkId=234238
 
@@ -95,10 +96,9 @@ namespace Runkeeper
                 {
                 }
                 else
-                {   
-                    
-                    //todo draw route
-
+                {
+                    App.instance.transfer.data.selectedRoute = r;
+                    Frame.Navigate(typeof(SavedRoutePage));
                 }
             }
         }
