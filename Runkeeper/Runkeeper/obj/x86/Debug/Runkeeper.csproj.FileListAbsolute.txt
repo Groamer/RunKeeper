@@ -671,4 +671,8 @@ D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debu
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\RunKeeper.pdb
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\RunKeeper.exe
 D:\Users\Tom Remeeus\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\RunKeeper.pdb
-C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\Core\TrackMap.exe
+C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\bin\x86\Debug\View\SavedRoutePage.xbf
+C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\SavedRoutePage.g.i.cs
+C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\SavedRoutePage.g.cs
+C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\SavedRoutePage.xaml
+C:\Users\Vincent Brands\Documents\GitHub\RunKeeper\Runkeeper\Runkeeper\obj\x86\Debug\View\SavedRoutePage.xbf

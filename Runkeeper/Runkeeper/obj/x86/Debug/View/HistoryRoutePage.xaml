@@ -34,9 +34,9 @@
                         <DataTemplate>
                             <controls:WrapPanel>
                                 <!--TextBlock x:Name="Distance"  Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" /-->
-                                <TextBlock Text="Name: " Foreground="Black"/>
+                                <TextBlock Text=" Name: " Foreground="Black"/>
                                 <TextBlock Text="{Binding name, Mode=TwoWay}" FontWeight="Bold" Foreground="Black"/>
-                                <TextBlock Text="Date : " Foreground="Black"/>
+                                <TextBlock Text=" Date : " Foreground="Black"/>
                                 <TextBlock Text="{Binding date, Mode=TwoWay}" FontWeight="Bold" Foreground="Black" />
                                 <TextBlock Text="{Binding totalDistance, Mode=TwoWay}" FontWeight="Bold" Visibility="Collapsed"/>
 

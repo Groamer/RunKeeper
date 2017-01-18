@@ -41,7 +41,6 @@ namespace Runkeeper
             if (App.instance.transfer.data.currentposition != null && App.instance.transfer.data.currentRoute != null)
             {
                 MapControl1.Center = App.instance.transfer.data.currentposition.Location;
-                MapControl1.ZoomLevel = 100;
                 UpdateRouteHistory(App.instance.transfer.data.currentposition.Location);
             }
             if (!App.instance.transfer.data.startApp)
@@ -155,7 +154,6 @@ namespace Runkeeper
 
         private async void startTracking()
         {
-            MapControl1.ZoomLevel = 100;
             Geoposition x = await GetPosition();
             App.instance.transfer.data.startposition = x.Coordinate.Point;
         }
@@ -228,6 +226,8 @@ namespace Runkeeper
             Velocity.DataContext = App.instance.transfer.data;
             Time.DataContext = App.instance.transfer.data.time;
             Afstand.DataContext = App.instance.transfer.data;
+            MapControl1.ZoomLevel = 17;
+
 
             if (App.instance.transfer.data.currentposition != null)
             {

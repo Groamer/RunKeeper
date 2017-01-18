@@ -217,5 +217,6 @@
       <RootProperty Name="Property" />
       <RootProperty Name="Value" />
     </RootType>
+    <RootType FullName="Runkeeper.View.SavedRoutePage" />
   </Roots.RootTypes>
 </Roots>
