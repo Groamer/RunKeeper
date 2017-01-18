@@ -95,10 +95,9 @@ namespace Runkeeper
                 {
                 }
                 else
-                {   
-                    
-                    //todo draw route
-
+                {
+                    App.instance.transfer.data.selectedRoute = r;
+                    Frame.Navigate(typeof(SavedRoutePage));
                 }
             }
         }
