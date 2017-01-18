@@ -87,7 +87,7 @@ namespace Runkeeper
 
                 ContentDialog dialog = new ContentDialog();
                 dialog.Title = r.name;
-                dialog.Content = "Date : " + r.date + "\n" + "Distance: " +" m" + r.totalDistance + "\n" + "Velocity: " + Math.Round(speed,1) +"km/h";
+                dialog.Content = "Date : " + r.date + "\n" + "Distance: " + r.totalDistance + " m" + "\n" + "Velocity: " + Math.Round(speed,1) +"km/h";
                 dialog.PrimaryButtonText = "Close";
                 dialog.SecondaryButtonText = "Draw this route";
 
