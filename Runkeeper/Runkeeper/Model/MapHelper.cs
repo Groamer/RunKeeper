@@ -14,8 +14,6 @@ namespace Runkeeper.Model
 {
     public class MapHelper: INotifyPropertyChanged
     {
-        private Route route = App.instance.transfer.data.selectedRoute;
-        private List<BasicGeoposition> positions;
         public event PropertyChangedEventHandler PropertyChanged;
 
         public async Task<Geoposition> CurrentLocation(Geoposition position)
@@ -65,39 +63,6 @@ namespace Runkeeper.Model
             }
             currentline.Path = new Geopath(positions);
             return currentline;
-        }
-
-        public MapPolyline DrawSavedRoute()
-        {
-            positions = new List<BasicGeoposition>();
-
-            MapPolyline savedRoute = new MapPolyline
-            {
-                StrokeThickness = 6,
-                StrokeColor = Colors.Red,
-                StrokeDashed = false,
-                ZIndex = 2
-            };
-
-            for (int i = 0; i < App.instance.transfer.data.selectedRoute.route.Count; i++)
-            {
-                positions.Add(new BasicGeoposition() { Latitude = App.instance.transfer.data.selectedRoute.route[i].location.Position.Latitude, Longitude = App.instance.transfer.data.selectedRoute.route[i].location.Position.Longitude });
-            }
-
-            savedRoute.Path = new Geopath(positions);
-            return savedRoute;
-        }
-
-        public Geopoint SavedRouteFocus()
-        {
-            Geopoint focusPoint = new Geopoint(
-                new BasicGeoposition()
-                {
-                    Latitude = positions[positions.Count / 2].Latitude,
-                    Longitude = positions[positions.Count / 2].Longitude
-                });
-
-            return focusPoint;
         }
     }
 }

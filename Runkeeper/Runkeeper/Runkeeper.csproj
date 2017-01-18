@@ -114,15 +114,6 @@
     <Compile Include="Model\Transfer.cs" />
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
-=======
-    <Compile Include="View\SavedRoutePage.xaml.cs">
-      <DependentUpon>SavedRoutePage.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="View\SettingsPage.xaml.cs">
-      <DependentUpon>SettingsPage.xaml</DependentUpon>
-    </Compile>
->>>>>>> ShowRouteHistory
     <Compile Include="Model\GeofenceHandler.cs" />
     <Compile Include="ViewModel\Time.cs" />
   </ItemGroup>
@@ -167,17 +158,6 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-<<<<<<< HEAD
-=======
-    <Page Include="View\SavedRoutePage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="View\SettingsPage.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
->>>>>>> ShowRouteHistory
   </ItemGroup>
   <ItemGroup />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
