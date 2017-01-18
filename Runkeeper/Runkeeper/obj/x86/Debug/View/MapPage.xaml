@@ -47,20 +47,30 @@
             TiltInteractionMode = "GestureAndControl"
             MapServiceToken = "xS4vNHeSZFK8abeuR8CL~2uSX4RiX25qGkRIQBRyBfw~AoVbkGgjXqhmrv1XyZPAWMLi74iLFbRI_bG2O5WWFzyO2gAFQkARtwiSsNdjV4kB"/>
 
-
+        <RelativePanel Grid.Row="6" Grid.Column="0" Style="{StaticResource RelativePanelStyleMapPage}" Margin="-254,0,206.333,480" Grid.ColumnSpan="3" Height="91" HorizontalAlignment="Right" Width="356"  Opacity="1">
+            <ToggleSwitch x:ConnectionId='16' Name="SetOn"                                  Margin="265,52,-265,-52" >
+                <ToggleSwitch.OffContent>Off</ToggleSwitch.OffContent>
+                <ToggleSwitch.OnContent>On</ToggleSwitch.OnContent>
+            </ToggleSwitch>
+            <TextBlock x:ConnectionId='17' x:Name="textBlock" HorizontalAlignment="Left" Height="32" TextWrapping="Wrap" VerticalAlignment="Top" Width="273" Margin="267,30,-478.333,-42" RenderTransformOrigin="0.843,2.233" FontSize="18" FontWeight="Bold" FontStyle="Italic" >
+                <Run Text="Focus "/>
+                <LineBreak/>
+                <Run/>
+            </TextBlock>
+        </RelativePanel>
 
         <RelativePanel Grid.Row="6" Grid.Column="0" Style="{StaticResource RelativePanelStyleMapPage}" Margin="0" Grid.ColumnSpan="5" Height="91" HorizontalAlignment="Right" Width="360" Background="#FFD7D7D7" Opacity="0.7">
-            <TextBlock x:ConnectionId='6' x:Name="Afstand" Grid.Row="6" Text="{Binding currentDistance,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,33,-162,-33" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="110"/>
+            <TextBlock x:ConnectionId='6' x:Name="Afstand" Grid.Row="6" Text="{Binding currentDistance,Mode=TwoWay}" FontSize="18" Height="28" Margin="121,33,-188,-33" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="110" FontWeight="Bold"/>
 
-            <TextBlock x:ConnectionId='7' x:Name="Timetext" Grid.Row="6" Text="Time" FontSize="18" Height="28" Margin="10,0,-45,0" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
+            <TextBlock x:ConnectionId='7' x:Name="Timetext" Grid.Row="6" Text="Time" FontSize="18" Height="28" Margin="10,0,-45,0" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85" FontStyle="Italic"/>
 
             <Button x:ConnectionId='8' Style="{StaticResource ButtonStyleMapPage}" x:Name="StartRunning" Content="START"                            Margin="258,0,-67,-46" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="92" FontSize="26"/>
-            <TextBlock x:ConnectionId='9' x:Name="Afstandtext" Text="Distance" FontSize="18" Height="28" Margin="10,32,-44,-32" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84"/>
-            <TextBlock x:ConnectionId='10' x:Name="Velocitytext" Text="Velocity" FontSize="18" Height="28" Margin="10,64,-45,-64" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85"/>
-            <TextBlock x:ConnectionId='11' x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,3,-205,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="159.9"/>
-            <TextBlock x:ConnectionId='12' x:Name="Velocity" Text="{Binding currentSpeed,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,63,-182,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="110"/>
+            <TextBlock x:ConnectionId='9' x:Name="Afstandtext" Text="Distance" FontSize="18" Height="28" Margin="10,32,-44,-32" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="84" FontStyle="Italic"/>
+            <TextBlock x:ConnectionId='10' x:Name="Velocitytext" Text="Velocity" FontSize="18" Height="28" Margin="10,64,-45,-64" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="85" FontStyle="Italic"/>
+            <TextBlock x:ConnectionId='11' x:Name="Time" Text="{Binding stopwatchTime,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,3,-205,-3" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="159.9" FontWeight="Bold"/>
+            <TextBlock x:ConnectionId='12' x:Name="Velocity" Text="{Binding currentSpeed,Mode=TwoWay}" FontSize="18" Height="28" Margin="95,63,-182,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" TextAlignment="Right" Width="110" FontWeight="Bold"/>
             <Button x:ConnectionId='13' Style="{StaticResource ButtonStyleMapPage}" x:Name="Stopbutton" Content="STOP" Margin="258,0,-67,-90" Foreground ="Black" Background="#FFE8E8E8" BorderBrush="#FF7D7979" Height="43" Width="92" FontSize="26" RenderTransformOrigin="0.582,1.628"                         />
-            <TextBlock x:ConnectionId='14' x:Name="Timetext_Copy" Text="km" FontSize="18" Margin="209,34,-205,-34" Foreground="Black" HorizontalAlignment="Left" Width="46"/>
+            <TextBlock x:ConnectionId='14' x:Name="Timetext_Copy" Text="m" FontSize="18" Margin="233,32,-229,-32" Foreground="Black" HorizontalAlignment="Left" Width="46"/>
             <TextBlock x:ConnectionId='15' x:Name="Timetext_Copy1" Text="km/h" FontSize="18" Height="28" Margin="208,63,-204,-63" Foreground="Black" VerticalAlignment="Top" HorizontalAlignment="Left" Width="46"/>
         </RelativePanel>
 
